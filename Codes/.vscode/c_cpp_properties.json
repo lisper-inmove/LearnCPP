@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "name": "Linux-Debug",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include",
+                "/home/inmove/.opt/opencv_cuda/include/opencv4",
+                "/home/inmove/nvme1/SourceCodes/googletest/googletest/include"
+            ],
+            "defines": [
+                "DEBUG"
+            ],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compileCommands": "${workspaceFolder}/compile_commands.json"
+        },
+        {
+            "name": "Linux-Release",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include",
+                "/home/inmove/.opt/opencv_cuda/include/opencv4",
+                "/home/inmove/nvme1/SourceCodes/googletest/googletest/include"
+            ],
+            "defines": [
+                "NDEBUG"
+            ],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compileCommands": "${workspaceFolder}/build/Release/compile_commands.json"
+        }
+    ],
+    "version": 4
+}

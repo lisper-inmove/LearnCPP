@@ -1,0 +1,31 @@
+---
+# 启用大部分有用检查，排除有争议的
+Checks: >
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  modernize-*,
+  performance-*,
+  -modernize-use-trailing-return-type,
+  -modernize-return-braced-init-list
+
+# 检查配置
+CheckOptions:
+  - key: modernize-use-nullptr.NullMacros
+    value: 'NULL'
+  - key: modernize-use-auto.MinTypeNameLength
+    value: '5'
+  - key: performance-for-range-const-ref.WarnOnAllAutoCopies
+    value: false
+
+# 只将真正严重的问题视为错误
+WarningsAsErrors: >
+  clang-diagnostic-*,
+  clang-analyzer-core.*,
+  clang-analyzer-cplusplus.*,
+  clang-analyzer-security.*,
+  performance-*,
+  modernize-use-nullptr,
+  modernize-use-override
+
+# 排除第三方代码和测试代码（可选）
+HeaderFilterRegex: '^(src/|include/myproject/).*'

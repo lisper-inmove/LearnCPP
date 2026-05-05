@@ -1,0 +1,62 @@
+{
+    // CMake Tools配置
+    "cmake.configureSettings": {
+        "OpenCV_DIR": "/home/inmove/.opt/opencv_cuda/lib/cmake/opencv4",
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+    },
+    "cmake.debugConfig": {
+        "args": [
+            "-V"
+        ]
+    },
+    "ctest.runArgs": [
+        "-V"
+    ],
+    // 根据构建类型使用不同的构建目录
+    "cmake.buildDirectory": "${workspaceFolder}/build/${buildType}",
+    "cmake.generator": "Unix Makefiles",
+    "cmake.configureOnOpen": true,
+    "cmake.buildBeforeRun": true,
+    // 设置默认构建类型为 Debug
+    "cmake.buildType": "Debug",
+    // 可用的构建类型
+    "cmake.buildTypes": [
+        "Debug",
+        "Release",
+        "RelWithDebInfo",
+        "MinSizeRel"
+    ],
+    // 清理CMake缓存
+    "cmake.clearOutputBeforeBuild": true,
+    // C++配置
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/${buildType}/compile_commands.json",
+    // 编辑器设置
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "googletest.failed",
+                "settings": {
+                    "foreground": "#f00"
+                }
+            },
+            {
+                "scope": "googletest.passed",
+                "settings": {
+                    "foreground": "#0f0"
+                }
+            },
+            {
+                "scope": "googletest.run",
+                "settings": {
+                    "foreground": "#0f0"
+                }
+            }
+        ]
+    },
+    "gtest-adapter.debugConfig": [
+        "Debug (Debug Build)"
+    ],
+    "gtest-adapter.supportLocation": false,
+    "testMate.cpp.test.executables": "${workspaceFolder}/build/**/*_Test"
+}

@@ -1,0 +1,63 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "debug",
+            "displayName": "Debug",
+            "description": "Debug build with debug symbols",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build/Debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "OpenCV_DIR": "/home/inmove/.opt/opencv_cuda/lib/cmake/opencv4"
+            },
+            "environment": {
+                "LD_LIBRARY_PATH": "/home/inmove/.opt/opencv_cuda/lib"
+            }
+        },
+        {
+            "name": "release",
+            "displayName": "Release",
+            "description": "Release build with optimizations",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build/Release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "OpenCV_DIR": "/home/inmove/.opt/opencv_cuda/lib/cmake/opencv4"
+            },
+            "environment": {
+                "LD_LIBRARY_PATH": "/home/inmove/.opt/opencv_cuda/lib"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug",
+            "configurePreset": "debug",
+            "configuration": "Debug",
+            "jobs": 20
+        },
+        {
+            "name": "release",
+            "configurePreset": "release",
+            "configuration": "Release",
+            "jobs": 20
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "debug",
+            "configurePreset": "debug",
+            "configuration": "Debug"
+        },
+        {
+            "name": "release",
+            "configurePreset": "release",
+            "configuration": "Release"
+        }
+    ]
+}
