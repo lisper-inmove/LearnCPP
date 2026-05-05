@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
+  "command": "/usr/bin/c++  -I/usr/local/cuda-13.0/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++17 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP.dir/src/main.cpp.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/src/main.cpp",
+  "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/src/main.cpp",
+  "output": "CMakeFiles/LearnCPP.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
+  "command": "/usr/bin/c++  -I/usr/local/cuda-13.0/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++17 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/main.cpp.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/main.cpp",
+  "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/main.cpp",
+  "output": "CMakeFiles/LearnCPP_Test.dir/tests/main.cpp.o"
+},
+{
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
+  "command": "/usr/bin/c++  -I/usr/local/cuda-13.0/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++17 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/CH1_test_one.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/CH1_test_one.cc",
+  "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/CH1_test_one.cc",
+  "output": "CMakeFiles/LearnCPP_Test.dir/tests/CH1_test_one.cc.o"
+},
+{
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
+  "command": "/usr/bin/c++  -I/usr/local/cuda-13.0/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++17 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/tester.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/tester.cc",
+  "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/tester.cc",
+  "output": "CMakeFiles/LearnCPP_Test.dir/tests/tester.cc.o"
+}
+]
