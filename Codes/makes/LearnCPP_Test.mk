@@ -26,6 +26,28 @@ build-debug-check:
 		$(MAKE) debug; \
 	fi
 
+# ============================================
+# CH1_test_one 测试规则
+# ============================================
+
+.PHONY: CH1_test_one
+CH1_test_one: build-debug-check
+	@echo "========================================"
+	@echo "Running all tests in CH1_test_one.cc"
+	@echo "========================================"
+	@$(TEST_EXEC_DEBUG) --gtest_filter="*_1_EmptyTest*:*TestLoop*"
+
+.PHONY: CH1_test_one._1_EmptyTest
+CH1_test_one._1_EmptyTest: build-debug-check
+	@echo "Running _1_EmptyTest..."
+	@$(TEST_EXEC_DEBUG) --gtest_filter="*_1_EmptyTest*"
+
+.PHONY: CH1_test_one.TestLoop
+CH1_test_one.TestLoop: build-debug-check
+	@echo "Running TestLoop..."
+	@$(TEST_EXEC_DEBUG) --gtest_filter="*TestLoop*"
+
+
 
 # ============================================
 # 辅助功能

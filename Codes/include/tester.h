@@ -1,7 +1,5 @@
 #pragma once
-#include <filesystem>
 
-#include "pch.h"
 #include <gtest/gtest.h>
 #include <opencv2/core/types.hpp>
 

@@ -5,7 +5,7 @@ add_executable(${PROJECT_NAME} ${SOURCES} src/main.cpp)
 
 # 设置输出目录（可选）
 set_target_properties(${PROJECT_NAME} PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
 )
 
 # 添加头文件路径

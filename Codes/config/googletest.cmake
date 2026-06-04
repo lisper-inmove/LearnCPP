@@ -18,7 +18,7 @@ target_include_directories(${TEST_NAME} PRIVATE "${GTEST_SOURCE_DIR}/googletest/
 target_include_directories(${TEST_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
 
 # ========== 链接库 ==========
-target_link_libraries(${TEST_NAME} 
+target_link_libraries(${TEST_NAME}
     PRIVATE
     gtest_main      # GoogleTest 主函数
     gtest           # GoogleTest 核心库

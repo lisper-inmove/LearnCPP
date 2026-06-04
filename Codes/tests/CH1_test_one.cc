@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "tester.h"
 #include "gtest/gtest.h"
 #include <iostream>

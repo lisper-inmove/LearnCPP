@@ -9,7 +9,7 @@
             "binaryDir": "${sourceDir}/build/Debug",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD": "23",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "OpenCV_DIR": "/home/inmove/.opt/opencv_cuda/lib/cmake/opencv4",
                 "CMAKE_CUDA_COMPILER": "/usr/local/cuda-13.0/bin/nvcc",
@@ -33,7 +33,7 @@
             "binaryDir": "${sourceDir}/build/Release",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
-                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD": "23",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "OpenCV_DIR": "/home/inmove/.opt/opencv_cuda/lib/cmake/opencv4"
             },
