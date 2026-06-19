@@ -2,7 +2,7 @@
     // CMake Tools配置
     "cmake.configureSettings": {
         "OpenCV_DIR": "/home/inmove/.opt/opencv_cuda/lib/cmake/opencv4",
-        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_CXX_STANDARD": "23",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
     },
     "cmake.debugConfig": {

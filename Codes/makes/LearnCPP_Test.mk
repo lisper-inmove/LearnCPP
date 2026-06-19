@@ -27,6 +27,23 @@ build-debug-check:
 	fi
 
 # ============================================
+# ai_pointer 测试规则
+# ============================================
+
+.PHONY: ai_pointer
+ai_pointer: build-debug-check
+	@echo "========================================"
+	@echo "Running all tests in ai_pointer.cc"
+	@echo "========================================"
+	@$(TEST_EXEC_DEBUG) --gtest_filter="*AIPointerTester*"
+
+.PHONY: ai_pointer.AIPointerTester
+ai_pointer.AIPointerTester: build-debug-check
+	@echo "Running AIPointerTester..."
+	@$(TEST_EXEC_DEBUG) --gtest_filter="*AIPointerTester*"
+
+
+# ============================================
 # CH1_test_one 测试规则
 # ============================================
 
@@ -46,6 +63,40 @@ CH1_test_one._1_EmptyTest: build-debug-check
 CH1_test_one.TestLoop: build-debug-check
 	@echo "Running TestLoop..."
 	@$(TEST_EXEC_DEBUG) --gtest_filter="*TestLoop*"
+
+
+# ============================================
+# const_usage 测试规则
+# ============================================
+
+.PHONY: const_usage
+const_usage: build-debug-check
+	@echo "========================================"
+	@echo "Running all tests in const_usage.cc"
+	@echo "========================================"
+	@$(TEST_EXEC_DEBUG) --gtest_filter="*ConstTester*"
+
+.PHONY: const_usage.ConstTester
+const_usage.ConstTester: build-debug-check
+	@echo "Running ConstTester..."
+	@$(TEST_EXEC_DEBUG) --gtest_filter="*ConstTester*"
+
+
+# ============================================
+# enable_shared_from_this_test 测试规则
+# ============================================
+
+.PHONY: enable_shared_from_this_test
+enable_shared_from_this_test: build-debug-check
+	@echo "========================================"
+	@echo "Running all tests in enable_shared_from_this_test.cc"
+	@echo "========================================"
+	@$(TEST_EXEC_DEBUG) --gtest_filter="*EnableSharedFromThisTester*"
+
+.PHONY: enable_shared_from_this_test.EnableSharedFromThisTester
+enable_shared_from_this_test.EnableSharedFromThisTester: build-debug-check
+	@echo "Running EnableSharedFromThisTester..."
+	@$(TEST_EXEC_DEBUG) --gtest_filter="*EnableSharedFromThisTester*"
 
 
 

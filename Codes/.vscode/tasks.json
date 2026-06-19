@@ -47,7 +47,7 @@
             "args": [
                 "-DCMAKE_BUILD_TYPE=Debug",
                 "-DOpenCV_DIR=/home/inmove/.opt/opencv_cuda/lib/cmake/opencv4",
-                "-DCMAKE_CXX_STANDARD=17",
+                "-DCMAKE_CXX_STANDARD=23",
                 "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
                 "-S",
                 "${workspaceFolder}",
@@ -64,7 +64,7 @@
             "args": [
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DOpenCV_DIR=/home/inmove/.opt/opencv_cuda/lib/cmake/opencv4",
-                "-DCMAKE_CXX_STANDARD=17",
+                "-DCMAKE_CXX_STANDARD=23",
                 "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
                 "-S",
                 "${workspaceFolder}",

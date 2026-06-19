@@ -17,7 +17,7 @@
 
 namespace cvtest::tester {
 
-TEST_F(Tester, EnableSharedFromThisTest) {
+TEST_F(Tester, EnableSharedFromThisTester) {
 
   class Bad {
   public:
