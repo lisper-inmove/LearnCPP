@@ -29,7 +29,7 @@ target_link_libraries(${TEST_NAME}
 include(GoogleTest)
 gtest_discover_tests(${TEST_NAME})
 
-target_link_libraries(${TEST_NAME} PRIVATE ${OpenCV_LIBS})
+target_link_libraries(${TEST_NAME} PRIVATE ${OpenCV_LIBS} TBB::tbb)
 
 # 设置输出目录（可选）
 set_target_properties(${TEST_NAME} PROPERTIES

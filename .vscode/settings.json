@@ -20,5 +20,6 @@
                 }
             }
         ]
-    }
+    },
+    "cmake.sourceDirectory": "/home/inmove/nvme1/Learn/LearnCPP/Codes"
 }

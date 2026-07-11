@@ -1,7 +1,11 @@
 #include "tester.h"
 #include "gtest/gtest.h"
+#include <algorithm>
+#include <chrono>
+#include <execution>
 #include <iostream>
 #include <map>
+#include <random>
 #include <string>
 #include <vector>
 
@@ -48,4 +52,25 @@ TEST_F(Tester, EraseTester) {
     std::cout << k << " : " << v << "\n";
   }
 }
+
+template <class ExecutionPolicy>
+void measure(ExecutionPolicy policy, std::vector<std::uint64_t> v) {
+  const auto start = std::chrono::steady_clock::now();
+  std::sort(policy, v.begin(), v.end());
+  const auto finish = std::chrono::steady_clock::now();
+  std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(finish -
+                                                                     start)
+            << "\n";
+}
+
+TEST_F(Tester, STLSortTester) {
+  std::vector<std::uint64_t> v(1000000);
+  std::mt19937 gen{std::random_device{}()};
+  std::ranges::generate(v, gen);
+  measure(std::execution::seq, v);
+  measure(std::execution::unseq, v);
+  measure(std::execution::par_unseq, v);
+  measure(std::execution::par, v);
+}
 } // namespace cvtest::tester
+ 
