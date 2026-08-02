@@ -82,23 +82,6 @@ const_usage.ConstTester: build-debug-check
 	@$(TEST_EXEC_DEBUG) --gtest_filter="*ConstTester*"
 
 
-# ============================================
-# enable_shared_from_this_test 测试规则
-# ============================================
-
-.PHONY: enable_shared_from_this_test
-enable_shared_from_this_test: build-debug-check
-	@echo "========================================"
-	@echo "Running all tests in enable_shared_from_this_test.cc"
-	@echo "========================================"
-	@$(TEST_EXEC_DEBUG) --gtest_filter="*EnableSharedFromThisTester*"
-
-.PHONY: enable_shared_from_this_test.EnableSharedFromThisTester
-enable_shared_from_this_test.EnableSharedFromThisTester: build-debug-check
-	@echo "Running EnableSharedFromThisTester..."
-	@$(TEST_EXEC_DEBUG) --gtest_filter="*EnableSharedFromThisTester*"
-
-
 
 # ============================================
 # 辅助功能

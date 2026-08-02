@@ -1,158 +1,247 @@
-# ============================================
-# 主 Makefile - 统一管理所有可执行文件和测试
-# ============================================
+# ============================================================================
+#  自动生成的测试 Makefile
+#  运行 ./gen_test_makefile.sh 重新生成
+# ============================================================================
 
-.PHONY: all debug release clean help
-.PHONY: run run-% test test-% list
+BUILD_DIR := build-Debug
+TEST_BIN  := $(BUILD_DIR)/bin/LearnCPP_Test
+SUITE     := Tester
+NO_COLOR  :=
 
-# 默认构建类型（可以通过命令行覆盖）
-BUILD_TYPE ?= Debug
-BUILD_DIR = build-$(shell echo $(BUILD_TYPE) | tr '[:upper:]' '[:lower:]')
+# 检测终端是否支持颜色
+ifeq ($(shell test -t 1 && echo yes),yes)
+  GREEN  := \033[0;32m
+  RED    := \033[0;31m
+  YELLOW := \033[0;33m
+  RESET  := \033[0m
+else
+  GREEN  :=
+  RED    :=
+  YELLOW :=
+  RESET  :=
+endif
 
-# 获取所有可执行文件名称（从 makes/*.mk 中提取）
-# 假设每个 .mk 文件定义了 EXECUTABLE 变量
--include makes/*.mk
+# ── list 目标 ──────────────────────────────────────────────────────────────
 
-# 收集所有可执行文件和测试
-EXECUTABLES := $(sort $(foreach mk, $(wildcard makes/*.mk), \
-                 $(if $(findstring test, $(mk)),, \
-                   $(shell grep -E '^EXECUTABLE\s*:=' $(mk) 2>/dev/null | cut -d'=' -f2))))
-TESTS := $(sort $(foreach mk, $(wildcard makes/*test*.mk), \
-            $(shell grep -E '^TEST_NAME\s*:=' $(mk) 2>/dev/null | cut -d'=' -f2)))
-
-# ============================================
-# 主要目标
-# ============================================
-
-all: debug
-
-# 配置项目
-config-%:
-	@cmake -B build-$* -DCMAKE_BUILD_TYPE=$* $(CMAKE_ARGS)
-
-config-debug: config-debug
-config-release: config-release
-
-# 构建所有目标
-build-%: config-%
-	@cmake --build build-$*
-
-debug: build-Debug
-release: build-Release
-
-# ============================================
-# 运行单个可执行文件
-# ============================================
-
-# 通用运行规则（自动检测构建目录）
-run-%: build-$(BUILD_TYPE)
-	@EXEC="$(shell find build-$(BUILD_TYPE) -name '$*' -type f -executable 2>/dev/null | head -1)"; \
-	if [ -n "$$EXEC" ] && [ -x "$$EXEC" ]; then \
-		echo "Running: $$EXEC"; \
-		$$EXEC; \
-	else \
-		echo "Error: Executable '$*' not found in build-$(BUILD_TYPE)"; \
-		exit 1; \
-	fi
-
-# 智能运行（自动选择 Debug 或 Release）
-smart-run-%:
-	@for dir in build-Debug build-Release; do \
-		EXEC="$$(find $$dir -name '$*' -type f -executable 2>/dev/null | head -1)"; \
-		if [ -n "$$EXEC" ]; then \
-			echo "Running: $$EXEC"; \
-			$$EXEC; \
-			exit 0; \
-		fi; \
-	done; \
-	echo "Error: Executable '$*' not found in build-Debug or build-Release"; \
-	exit 1
-
-# ============================================
-# 单元测试
-# ============================================
-
-# 运行所有测试
-test: build-$(BUILD_TYPE)
-	@cd build-$(BUILD_TYPE) && ctest --output-on-failure
-
-# 运行特定测试（通过名称匹配）
-test-%: build-$(BUILD_TYPE)
-	@cd build-$(BUILD_TYPE) && ctest --output-on-failure -R '$*'
-
-# 运行测试并显示详细输出
-test-verbose: build-$(BUILD_TYPE)
-	@cd build-$(BUILD_TYPE) && ctest --output-on-failure --verbose
-
-# 运行测试（Debug 版本）
-test-debug: build-Debug
-	@cd build-Debug && ctest --output-on-failure
-
-# 运行测试（Release 版本）
-test-release: build-Release
-	@cd build-Release && ctest --output-on-failure
-
-# ============================================
-# 清理
-# ============================================
-
-clean:
-	@rm -rf build-Debug build-Release
-	@echo "Cleaned build directories"
-
-clean-debug:
-	@rm -rf build-Debug
-	@echo "Cleaned build-Debug"
-
-clean-release:
-	@rm -rf build-Release
-	@echo "Cleaned build-Release"
-
-# ============================================
-# 重建（清理 + 构建 + 运行）
-# ============================================
-
-rebuild: clean debug
-
-rebuild-run-%: clean
-	@$(MAKE) run-$*
-
-# ============================================
-# 实用工具
-# ============================================
-
-# 列出所有可执行文件和测试
+.PHONY: list
 list:
-	@echo "Available executables:"
-	@$(foreach exec,$(EXECUTABLES),echo "  - $(exec)";)
-	@echo ""
-	@echo "Available tests:"
-	@$(foreach test,$(TESTS),echo "  - $(test)";)
-	@echo ""
-	@echo "Usage examples:"
-	@echo "  make run-app1              # Build and run app1 (Debug)"
-	@echo "  make run-app2 BUILD_TYPE=Release  # Build and run app2 (Release)"
-	@echo "  make smart-run-app1        # Run app1 (auto-select existing build)"
-	@echo "  make test                  # Run all tests"
-	@echo "  make test-mytest           # Run tests matching 'mytest'"
-	@echo "  make test-verbose          # Run all tests with verbose output"
+	@echo "$(YELLOW)=== 可用测试目标 ($(words $(TESTS)) 个) ===$(RESET)"
+	@$(foreach t,$(TESTS),echo "  make $(t)";)
 
-# ============================================
-# 帮助信息
-# ============================================
+# ── help ───────────────────────────────────────────────────────────────────
 
+.PHONY: help
 help:
-	@echo "Available targets:"
-	@echo "  make debug              - Configure and build Debug version"
-	@echo "  make release            - Configure and build Release version"
-	@echo "  make run-<name>         - Build and run specific executable"
-	@echo "  make smart-run-<name>   - Run executable (auto-select build dir)"
-	@echo "  make test               - Run all unit tests"
-	@echo "  make test-<pattern>     - Run tests matching pattern"
-	@echo "  make clean              - Remove build directories"
-	@echo "  make rebuild            - Clean and rebuild Debug version"
-	@echo "  make list               - List all available executables and tests"
-	@echo ""
-	@echo "Variables:"
-	@echo "  BUILD_TYPE=[Debug|Release]  - Set build type (default: Debug)"
-	@echo "  CMAKE_ARGS='...'            - Pass additional arguments to CMake"
+	@echo "用法:"
+	@echo "  make <测试名>     运行单个测试"
+	@echo "  make list         列出所有测试"
+	@echo "  make all          运行全部测试"
+	@echo "  make build        编译测试二进制"
+	@echo "  make regen        重新生成此 Makefile"
+
+# ── build ──────────────────────────────────────────────────────────────────
+
+.PHONY: build
+build:
+	@echo "[build] 编译 $(TEST_BIN)..."
+	@cmake --build $(BUILD_DIR) --target LearnCPP_Test -- -j$$(nproc)
+
+# ── all ────────────────────────────────────────────────────────────────────
+
+.PHONY: all
+all: build
+	@echo "$(YELLOW)=== 运行全部测试 ===$(RESET)"
+	@$(TEST_BIN)
+
+# ── regen ──────────────────────────────────────────────────────────────────
+
+.PHONY: regen
+regen:
+	@./gen_test_makefile.sh
+
+# ── 单个测试模板 ───────────────────────────────────────────────────────────
+
+define TEST_TEMPLATE
+.PHONY: $(1)
+$(1): build
+	@printf "$(YELLOW)[$(1)]$(RESET) "
+	@$(TEST_BIN) --gtest_filter="$(SUITE).$(1)" \
+		&& printf "$(GREEN)PASS$(RESET)\n" \
+		|| printf "$(RED)FAIL$(RESET)\n"
+endef
+
+TESTS :=
+
+TESTS += _1_EmptyTest
+$(eval $(call TEST_TEMPLATE,_1_EmptyTest))
+
+TESTS += TestLoop
+$(eval $(call TEST_TEMPLATE,TestLoop))
+
+TESTS += CIA_Concurrency_In_Action_CH5_Tester
+$(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH5_Tester))
+
+TESTS += CIA_AtomicBasicTester
+$(eval $(call TEST_TEMPLATE,CIA_AtomicBasicTester))
+
+TESTS += CIA_MemoryOrderTester
+$(eval $(call TEST_TEMPLATE,CIA_MemoryOrderTester))
+
+TESTS += CIA_BoolTester
+$(eval $(call TEST_TEMPLATE,CIA_BoolTester))
+
+TESTS += CIA_Concurrency_In_Action_CH3_Tester
+$(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH3_Tester))
+
+TESTS += CIA_IdentifyThreadTester
+$(eval $(call TEST_TEMPLATE,CIA_IdentifyThreadTester))
+
+TESTS += CIA_LockGuardTester
+$(eval $(call TEST_TEMPLATE,CIA_LockGuardTester))
+
+TESTS += CIA_SolveDeadlockTester
+$(eval $(call TEST_TEMPLATE,CIA_SolveDeadlockTester))
+
+TESTS += CIA_DoOnceTester
+$(eval $(call TEST_TEMPLATE,CIA_DoOnceTester))
+
+TESTS += CIA_Concurrency_In_Action_CH4_Tester
+$(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH4_Tester))
+
+TESTS += CIA_AsyncTester
+$(eval $(call TEST_TEMPLATE,CIA_AsyncTester))
+
+TESTS += CIA_AsyncStrategyTester
+$(eval $(call TEST_TEMPLATE,CIA_AsyncStrategyTester))
+
+TESTS += CIA_LoopWaitForFutureTester
+$(eval $(call TEST_TEMPLATE,CIA_LoopWaitForFutureTester))
+
+TESTS += CIA_RaiseExceptionTester
+$(eval $(call TEST_TEMPLATE,CIA_RaiseExceptionTester))
+
+TESTS += CIA_PackagedTaskTester
+$(eval $(call TEST_TEMPLATE,CIA_PackagedTaskTester))
+
+TESTS += CIA_PromiseTester
+$(eval $(call TEST_TEMPLATE,CIA_PromiseTester))
+
+TESTS += AIPointerTester
+$(eval $(call TEST_TEMPLATE,AIPointerTester))
+
+TESTS += ConstTester
+$(eval $(call TEST_TEMPLATE,ConstTester))
+
+TESTS += AtomicTester
+$(eval $(call TEST_TEMPLATE,AtomicTester))
+
+TESTS += BarrierTester
+$(eval $(call TEST_TEMPLATE,BarrierTester))
+
+TESTS += CouroutineTester
+$(eval $(call TEST_TEMPLATE,CouroutineTester))
+
+TESTS += LatchTester
+$(eval $(call TEST_TEMPLATE,LatchTester))
+
+TESTS += LockTester
+$(eval $(call TEST_TEMPLATE,LockTester))
+
+TESTS += CounterValue
+$(eval $(call TEST_TEMPLATE,CounterValue))
+
+TESTS += CounterValueWithMutex
+$(eval $(call TEST_TEMPLATE,CounterValueWithMutex))
+
+TESTS += LockManagementTester
+$(eval $(call TEST_TEMPLATE,LockManagementTester))
+
+TESTS += ConditionVariableTester
+$(eval $(call TEST_TEMPLATE,ConditionVariableTester))
+
+TESTS += PFTester
+$(eval $(call TEST_TEMPLATE,PFTester))
+
+TESTS += PFWithTimeoutTester
+$(eval $(call TEST_TEMPLATE,PFWithTimeoutTester))
+
+TESTS += PFPackagedTaskTester
+$(eval $(call TEST_TEMPLATE,PFPackagedTaskTester))
+
+TESTS += PFAsyncTester
+$(eval $(call TEST_TEMPLATE,PFAsyncTester))
+
+TESTS += PFSharedFutureTester
+$(eval $(call TEST_TEMPLATE,PFSharedFutureTester))
+
+TESTS += SemaphoreTester
+$(eval $(call TEST_TEMPLATE,SemaphoreTester))
+
+TESTS += AsyncTester
+$(eval $(call TEST_TEMPLATE,AsyncTester))
+
+TESTS += ThreadCreateTester
+$(eval $(call TEST_TEMPLATE,ThreadCreateTester))
+
+TESTS += ThreadSleepTester
+$(eval $(call TEST_TEMPLATE,ThreadSleepTester))
+
+TESTS += ThreadParameters
+$(eval $(call TEST_TEMPLATE,ThreadParameters))
+
+TESTS += DaemonThreadTester
+$(eval $(call TEST_TEMPLATE,DaemonThreadTester))
+
+TESTS += JThreadTester
+$(eval $(call TEST_TEMPLATE,JThreadTester))
+
+TESTS += YieldTester
+$(eval $(call TEST_TEMPLATE,YieldTester))
+
+TESTS += CancelThreadTester
+$(eval $(call TEST_TEMPLATE,CancelThreadTester))
+
+TESTS += CancelThreadTesterStopToken
+$(eval $(call TEST_TEMPLATE,CancelThreadTesterStopToken))
+
+TESTS += CancelThreadTesterStopSource
+$(eval $(call TEST_TEMPLATE,CancelThreadTesterStopSource))
+
+TESTS += CancelThreadTesterCallback
+$(eval $(call TEST_TEMPLATE,CancelThreadTesterCallback))
+
+TESTS += ThreadLocalTester
+$(eval $(call TEST_TEMPLATE,ThreadLocalTester))
+
+TESTS += ClassTest
+$(eval $(call TEST_TEMPLATE,ClassTest))
+
+TESTS += UniquePtrTester
+$(eval $(call TEST_TEMPLATE,UniquePtrTester))
+
+TESTS += EnableSharedFromThisTester
+$(eval $(call TEST_TEMPLATE,EnableSharedFromThisTester))
+
+TESTS += STLTester
+$(eval $(call TEST_TEMPLATE,STLTester))
+
+TESTS += EraseTester
+$(eval $(call TEST_TEMPLATE,EraseTester))
+
+TESTS += STLSortTester
+$(eval $(call TEST_TEMPLATE,STLSortTester))
+
+TESTS += TemplateTester
+$(eval $(call TEST_TEMPLATE,TemplateTester))
+
+TESTS += TemplateBaseTester
+$(eval $(call TEST_TEMPLATE,TemplateBaseTester))
+
+TESTS += NonTypeTemplateTester
+$(eval $(call TEST_TEMPLATE,NonTypeTemplateTester))
+
+TESTS += TemplateTemplateTester
+$(eval $(call TEST_TEMPLATE,TemplateTemplateTester))
+
+
+# ============================================================================

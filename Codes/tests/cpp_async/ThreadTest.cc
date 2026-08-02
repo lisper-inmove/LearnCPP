@@ -1,10 +1,12 @@
 #include "tester.h"
 #include "gtest/gtest.h"
+#include <algorithm>
 #include <atomic>
 #include <chrono>
 #include <cstdlib>
 #include <ios>
 #include <iostream>
+#include <list>
 #include <mutex>
 #include <stop_token>
 #include <string>
@@ -64,12 +66,23 @@ TEST_F(Tester, ThreadCreateTester) {
   // 6. 用静态成员函数
   std::thread t6(&SObj::staticFunc);
 
-  t1.join();
-  t2.join();
-  t3.join();
-  t4.join();
-  t5.join();
-  t6.join();
+  // t1.join();
+  // t2.join();
+  // t3.join();
+  // t4.join();
+  // t5.join();
+  // 如果不判断是否joinable，当子线程里报错时，直接join会导致 join 报错
+  if (t1.joinable()) {
+    t1.detach();
+  }
+  t2.detach();
+  t3.detach();
+  t4.detach();
+  t5.detach();
+  if (t6.joinable()) {
+
+    t6.join();
+  }
 }
 
 // --------------- 线程的操作 -------------------------------
@@ -306,6 +319,5 @@ TEST_F(Tester, ThreadLocalTester) {
   t1.join();
   t2.join();
 }
-
 } // namespace cvtest::tester
 //
