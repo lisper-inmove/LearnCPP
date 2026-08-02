@@ -90,6 +90,12 @@ $(eval $(call TEST_TEMPLATE,CIA_MemoryOrderTester))
 TESTS += CIA_BoolTester
 $(eval $(call TEST_TEMPLATE,CIA_BoolTester))
 
+TESTS += CIA_AtomicPointerTester
+$(eval $(call TEST_TEMPLATE,CIA_AtomicPointerTester))
+
+TESTS += CIA_UserDefineAtomicTester
+$(eval $(call TEST_TEMPLATE,CIA_UserDefineAtomicTester))
+
 TESTS += CIA_Concurrency_In_Action_CH3_Tester
 $(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH3_Tester))
 

@@ -114,11 +114,61 @@ TEST_F(Tester, CIA_BoolTester) {
   std::cout << "before value is: " << result << "\n";
   std::cout << "now value is: " << value.load() << "\n";
 
+  /**
+   *
+   * 特性|compare_exchange_weak|compare_exchange_strong
+   * 虚假失败|允许。即使原子变量值与 expected 相等，它也可能返回 false。|不允许。只有当原子变量值与 expected 不相等时，它才会返回 false。
+   * 性能|可能更高。为了实现“虚假失败”的灵活性，编译器在某些平台上能生成更高效的代码。|相对较低。需要额外的检查来保证不会虚假失败，这会带来一些开销。
+   * 使用场景|循环（Loop）中。因其允许失败，通常需要在循环中重试直到成功。|单次检查或无循环场景。适用于你期望一次调用就能准确反映比较结果的场景。
+   *
+   * */
   bool expected = true;
   // 原值与expected相同时，则把值修改为第二个值。 修改成功返回true，否则返回 false
   auto try1 = value.compare_exchange_strong(expected, false);
   auto try2 = value.compare_exchange_strong(expected, false);
-  std::cout << "try1 " << try1 << " , try2 " << try2 << "\n";
+  auto try3 = value.compare_exchange_weak(expected, false, std::memory_order_acq_rel, std::memory_order_acquire);
+  std::cout << "try1 " << try1 << " , try2 " << try2 << " , try3 " << try3 << "\n";
+}
+
+class Foo {};
+
+TEST_F(Tester, CIA_AtomicPointerTester) {
+
+  Foo anArray[5];
+
+  /**
+   *
+   *  fetch_sub, fetch_and, fetch_or, fetch_xor
+   *
+   * */
+  std::atomic<Foo *> foo(anArray);
+  Foo *p = foo.fetch_add(2); // p得到的是原值
+  std::cout << "foo " << foo << "\n";
+  std::cout << "p " << p << "\n";
+  assert(p == anArray);
+  assert(foo.load() == &anArray[2]);
+}
+
+/**
+ * C++ 标准规定，T 必须是可平凡复制（trivially copyable） 的类型，同时还需要满足
+ *  1. 没有虚函数或虚基类
+ *  2. 所有成员都是可平凡复制的；
+ *  3. 默认拷贝构造函数、拷贝赋值运算符等是平凡的（或显式默认实现）；
+ *  4. 可以安全地使用 memcpy 复制其对象。
+ *
+ *  简单来说，只要你的类型能像 C 风格的结构体那样按字节复制，通常就符合条件。
+ *
+ * */
+TEST_F(Tester, CIA_UserDefineAtomicTester) {
+  struct Point {
+    int x, y;
+  };
+  std::atomic<Point> p1{Point{1, 2}};
+  Point pt{5, 6};
+
+  p1.store(pt);
+  Point loaded = p1.load();
+  std::cout << "p1 x = " << loaded.x << " y = " << loaded.y << "\n";
 }
 
 } // namespace cvtest::tester
