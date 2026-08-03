@@ -5,7 +5,9 @@
 #include "tester.h"
 #include "gtest/gtest.h"
 #include <atomic>
+#include <cassert>
 #include <iostream>
+#include <thread>
 
 namespace cvtest::tester {
 TEST_F(Tester, CIA_Concurrency_In_Action_CH5_Tester) {
@@ -169,6 +171,206 @@ TEST_F(Tester, CIA_UserDefineAtomicTester) {
   p1.store(pt);
   Point loaded = p1.load();
   std::cout << "p1 x = " << loaded.x << " y = " << loaded.y << "\n";
+}
+
+// Listing 5.4
+TEST_F(Tester, CIA_SequentialConsistencyTester) {
+  std::atomic<bool> x, y;
+  std::atomic<int> z;
+  auto write_x = [&x] { x.store(true, std::memory_order_seq_cst); };
+  auto write_y = [&y] { y.store(true, std::memory_order_seq_cst); };
+  auto read_x_then_y = [&x, &y, &z] {
+    while (!x.load(std::memory_order_seq_cst))
+      ;
+    if (y.load(std::memory_order_seq_cst))
+      z++;
+  };
+  auto read_y_then_x = [&x, &y, &z] {
+    while (!y.load(std::memory_order_seq_cst))
+      ;
+    if (x.load(std::memory_order_seq_cst))
+      z++;
+  };
+  x = false;
+  y = false;
+  z = 0;
+  std::thread a(write_x);
+  std::thread b(write_y);
+  std::thread c(read_x_then_y);
+  std::thread d(read_y_then_x);
+  a.join();
+  b.join();
+  c.join();
+  d.join();
+  assert(z.load() != 0);
+}
+
+// Listing 5.5
+/**
+ *
+ * 是的，z 可能等于 0。
+ * 分析这段代码（第212-221行）：
+ * - 线程 A：x.store(true, relaxed) → y.store(true, relaxed)
+ * - 线程 B：等 y.load(relaxed) == true → 检查 x.load(relaxed)，若为 true 则 z++
+ * 关键在于 memory_order_relaxed 不提供任何线程间的同步或顺序保证。线程 B 看到 y == true，不代表它也能看到 x == true——从线程 B 的视角，线程 A 对 x 和 y
+ * 的写入可以以任意顺序变为可见。
+ * 在 C++ 标准层面，没有任何 happens-before 关系保证线程 B 在观察到 y == true 时也必然观察到 x == true。因此 z++ 可能不执行，z 保持为 0，第229行的
+ * assert(z.load() != 0) 是可能触发失败的。
+ * 实际表现取决于硬件内存模型：
+ * - x86/64（TSO 强模型）：store-store 不会重排，实际上不会失败
+ * - ARM / POWER（弱模型）：完全可能出现 z == 0 的情况
+ * */
+TEST_F(Tester, CIA_RelaxedOperationTester) {
+  std::atomic<bool> x, y;
+  std::atomic<int> z;
+  auto write_x_then_y = [&x, &y] {
+    x.store(true, std::memory_order_relaxed);
+    y.store(true, std::memory_order_relaxed);
+  };
+  auto read_y_then_x = [&x, &y, &z] {
+    while (!y.load(std::memory_order_relaxed))
+      ;
+    if (x.load(std::memory_order_relaxed))
+      z++;
+  };
+  x = false;
+  y = false;
+  z = 0;
+  std::thread a(write_x_then_y);
+  std::thread b(read_y_then_x);
+  a.join();
+  b.join();
+  assert(z.load() != 0);
+}
+
+// Listing 5.6
+TEST_F(Tester, CIA_RelaxedOperationMultipleThreadsTester) {
+  std::atomic<int> x(0), y(0), z(0);
+  std::atomic<bool> go(false);
+  unsigned const loop_count = 10;
+  struct read_values {
+    int x, y, z;
+  };
+  read_values values1[loop_count];
+  read_values values2[loop_count];
+  read_values values3[loop_count];
+  read_values values4[loop_count];
+  read_values values5[loop_count];
+  auto increment = [&go, &x, &y, &z](std::atomic<int> *var_to_inc, read_values *values) {
+    while (!go)
+      std::this_thread::yield();
+    for (unsigned i = 0; i < loop_count; i++) {
+      values[i].x = x.load(std::memory_order_relaxed);
+      values[i].y = y.load(std::memory_order_relaxed);
+      values[i].z = z.load(std::memory_order_relaxed);
+      var_to_inc->store(i + 1, std::memory_order_relaxed);
+      std::this_thread::yield();
+    }
+  };
+  auto read_vals = [&go, &x, &y, &z](read_values *values) {
+    while (!go)
+      std::this_thread::yield();
+    for (unsigned i = 0; i < loop_count; i++) {
+      values[i].x = x.load(std::memory_order_relaxed);
+      values[i].y = y.load(std::memory_order_relaxed);
+      values[i].z = z.load(std::memory_order_relaxed);
+      std::this_thread::yield();
+    }
+  };
+  auto print = [](read_values *v) {
+    for (unsigned i = 0; i < loop_count; i++) {
+      if (i)
+        std::cout << ",";
+      std::cout << "(" << v[i].x << "," << v[i].y << "," << v[i].z << ")";
+    }
+    std::cout << "\n";
+  };
+
+  std::thread t1(increment, &x, values1);
+  std::thread t2(increment, &y, values2);
+  std::thread t3(increment, &z, values3);
+  std::thread t4(read_vals, values4);
+  std::thread t5(read_vals, values5);
+  go = true;
+  t5.join();
+  t4.join();
+  t3.join();
+  t2.join();
+  t1.join();
+  print(values1);
+  print(values2);
+  print(values3);
+  print(values4);
+  print(values5);
+}
+
+// Listing 5.7
+/**
+ *
+ *  release/acquire 只在同一原子变量的配对操作间建立 synchronizes-with：
+ *  - x.store(release) ↔ x.load(acquire) ✓
+ *  - y.store(release) ↔ y.load(acquire) ✓
+ *  但 x 和 y 之间没有跨变量顺序保证。以下执行顺序是合法的：
+ *  1. 线程 a：x.store(true, release)
+ *  2. 线程 c：x.load(acquire) → true（与步骤1同步）；y.load(acquire) → false（线程 b 还没写入，或无跨变量可见性保证）
+ *  3. 线程 b：y.store(true, release)
+ *  4. 线程 d：y.load(acquire) → true（与步骤3同步）；x.load(acquire) → false（同样没有跨变量保证）
+ *  结果：z = 0，断言失败。
+ *
+ * */
+TEST_F(Tester, CIA_AcquireReleaseTester) {
+  std::atomic<bool> x, y;
+  std::atomic<int> z;
+  auto write_x = [&x] { x.store(true, std::memory_order_release); };
+  auto write_y = [&y] { y.store(true, std::memory_order_release); };
+  auto read_x_then_y = [&x, &y, &z] {
+    while (!x.load(std::memory_order_acquire))
+      ;
+    if (y.load(std::memory_order_acquire))
+      z++;
+  };
+  auto read_y_then_x = [&x, &y, &z] {
+    while (!y.load(std::memory_order_acquire))
+      ;
+    if (x.load(std::memory_order_acquire))
+      z++;
+  };
+  x = false;
+  y = false;
+  z = 0;
+  std::thread a(write_x);
+  std::thread b(write_y);
+  std::thread c(read_x_then_y);
+  std::thread d(read_y_then_x);
+  a.join();
+  b.join();
+  c.join();
+  d.join();
+  assert(z.load() != 0);
+}
+
+// Listing 5.8
+TEST_F(Tester, CIA_AcquireReleaseImposeOrderingTester) {
+  std::atomic<bool> x, y;
+  std::atomic<int> z;
+  auto write_x_then_y = [&x, &y] {
+    x.store(true, std::memory_order_relaxed);
+    y.store(true, std::memory_order_release);
+  };
+  auto read_y_then_x = [&x, &y, &z] {
+    while (!y.load(std::memory_order_acquire))
+      ;
+    if (x.load(std::memory_order_relaxed))
+      z++;
+  };
+  x = false;
+  y = false;
+  z = 0;
+  std::thread a(write_x_then_y);
+  std::thread b(read_y_then_x);
+  a.join();
+  b.join();
+  assert(z.load() != 0);
 }
 
 } // namespace cvtest::tester

@@ -96,6 +96,21 @@ $(eval $(call TEST_TEMPLATE,CIA_AtomicPointerTester))
 TESTS += CIA_UserDefineAtomicTester
 $(eval $(call TEST_TEMPLATE,CIA_UserDefineAtomicTester))
 
+TESTS += CIA_SequentialConsistencyTester
+$(eval $(call TEST_TEMPLATE,CIA_SequentialConsistencyTester))
+
+TESTS += CIA_RelaxedOperationTester
+$(eval $(call TEST_TEMPLATE,CIA_RelaxedOperationTester))
+
+TESTS += CIA_RelaxedOperationMultipleThreadsTester
+$(eval $(call TEST_TEMPLATE,CIA_RelaxedOperationMultipleThreadsTester))
+
+TESTS += CIA_AcquireReleaseTester
+$(eval $(call TEST_TEMPLATE,CIA_AcquireReleaseTester))
+
+TESTS += CIA_AcquireReleaseImposeOrderingTester
+$(eval $(call TEST_TEMPLATE,CIA_AcquireReleaseImposeOrderingTester))
+
 TESTS += CIA_Concurrency_In_Action_CH3_Tester
 $(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH3_Tester))
 
