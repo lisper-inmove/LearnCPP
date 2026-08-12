@@ -7,10 +7,12 @@
 #include "tester.h"
 #include "gtest/gtest.h"
 #include <algorithm>
+#include <climits>
 #include <cstdlib>
 #include <iostream>
 #include <list>
 #include <mutex>
+#include <stdexcept>
 #include <string>
 #include <thread>
 
@@ -87,8 +89,7 @@ TEST_F(Tester, CIA_LockGuardTester) {
   };
   auto listContains = [&](int valueToFind) {
     std::lock_guard<std::mutex> guard(someMutex);
-    return std::find(someList.begin(), someList.end(), valueToFind) !=
-           someList.end();
+    return std::find(someList.begin(), someList.end(), valueToFind) != someList.end();
   };
 }
 
@@ -110,9 +111,7 @@ TEST_F(Tester, CIA_SolveDeadlockTester) {}
  * */
 TEST_F(Tester, CIA_DoOnceTester) {
   std::once_flag runOnceFlag;
-  auto threadFunc = [&] {
-    std::call_once(runOnceFlag, [] { std::cout << "Called only once\n"; });
-  };
+  auto threadFunc = [&] { std::call_once(runOnceFlag, [] { std::cout << "Called only once\n"; }); };
   std::thread t1(threadFunc);
   std::thread t2(threadFunc);
   std::thread t3(threadFunc);
@@ -134,6 +133,117 @@ TEST_F(Tester, CIA_DoOnceTester) {
 /**
  * std::recursive_mutex
  * */
+
+class HierarchicalMutex {
+private:
+  std::mutex mtx;
+  unsigned long hierarchyValue_;
+  unsigned long previousHierarchyValue_;
+  void check_for_hierarchy_violation() {
+    if (thisThreadHierarchyValue_ <= hierarchyValue_) {
+      throw std::logic_error("Mutex hierarchy violated");
+    }
+  }
+
+  void update_hierarchy_value() {
+    previousHierarchyValue_ = thisThreadHierarchyValue_;
+    thisThreadHierarchyValue_ = hierarchyValue_;
+  }
+
+public:
+  static thread_local unsigned long thisThreadHierarchyValue_;
+  explicit HierarchicalMutex(unsigned long value) : hierarchyValue_(value), previousHierarchyValue_(0) {}
+
+  void lock() {
+    check_for_hierarchy_violation();
+    mtx.lock();
+    update_hierarchy_value();
+  }
+
+  void unlock() {
+    if (thisThreadHierarchyValue_ != hierarchyValue_) {
+      throw std::logic_error("Mutex hierarchy violated");
+    }
+    thisThreadHierarchyValue_ = previousHierarchyValue_;
+    mtx.unlock();
+  }
+  bool try_lock() {
+    check_for_hierarchy_violation();
+    if (!mtx.try_lock()) {
+      return false;
+    }
+    update_hierarchy_value();
+    return true;
+  }
+};
+
+thread_local unsigned long HierarchicalMutex::thisThreadHierarchyValue_(ULONG_MAX);
+
+TEST_F(Tester, CIA_HierarchicalMutexTester) {
+  HierarchicalMutex highLevelMutex(10000);
+  HierarchicalMutex lowLevelMutex(5000);
+  HierarchicalMutex otherMutex(6000);
+
+  auto do_low_level_stuff = []() { std::cout << "low level stuff \n"; };
+  auto do_high_level_stuff = []() { std::cout << "high level stuff \n"; };
+  auto other_level_stuff = [&do_high_level_stuff]() {
+    do_high_level_stuff();
+    std::cout << "do other level stuff\n";
+  };
+
+  auto low_level_func = [&]() {
+    std::lock_guard<HierarchicalMutex> lk(lowLevelMutex);
+    return do_low_level_stuff();
+  };
+
+  auto high_level_func = [&]() {
+    std::lock_guard<HierarchicalMutex> lk(highLevelMutex);
+    do_high_level_stuff();
+  };
+
+  auto other_func = [&]() {
+    std::lock_guard<HierarchicalMutex> lk(otherMutex);
+    other_level_stuff();
+  };
+
+  auto thread_a = [&]() {
+    std::lock_guard<HierarchicalMutex> lk(highLevelMutex);
+    low_level_func();
+  };
+
+  auto thread_b = [&]() {
+    std::lock_guard<HierarchicalMutex> lk(otherMutex);
+    high_level_func();
+  };
+
+  std::thread t1(thread_a);
+  std::thread t2(thread_b);
+  t1.join();
+  t2.join();
+}
+
+std::mutex mtx001;
+
+std::unique_lock<std::mutex> get_lock() {
+  extern std::mutex mtx001;
+  std::unique_lock<std::mutex> lk(mtx001);
+  std::cout << "Do something to prepare data...\n";
+  return lk;
+}
+
+void process_data() {
+  std::cout << "Before get lock process data...\n";
+  std::unique_lock<std::mutex> lk(get_lock());
+  std::cout << "After get lock process data...\n";
+  std::this_thread::sleep_for(3s);
+}
+
+TEST_F(Tester, CIA_UniqueLockTester) {
+  std::thread t1(process_data);
+  std::thread t2(process_data);
+  t1.join();
+  t2.join();
+}
 
 } // namespace cvtest::tester
 //

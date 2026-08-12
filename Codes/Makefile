@@ -78,6 +78,21 @@ $(eval $(call TEST_TEMPLATE,_1_EmptyTest))
 TESTS += TestLoop
 $(eval $(call TEST_TEMPLATE,TestLoop))
 
+TESTS += CIA_Concurrency_In_Action_CH2_Tester
+$(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH2_Tester))
+
+TESTS += CIA_StartThread1
+$(eval $(call TEST_TEMPLATE,CIA_StartThread1))
+
+TESTS += CIA_StartThread2
+$(eval $(call TEST_TEMPLATE,CIA_StartThread2))
+
+TESTS += CIA_StartThread3
+$(eval $(call TEST_TEMPLATE,CIA_StartThread3))
+
+TESTS += CIA_ThreadTerminate
+$(eval $(call TEST_TEMPLATE,CIA_ThreadTerminate))
+
 TESTS += CIA_Concurrency_In_Action_CH5_Tester
 $(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH5_Tester))
 
@@ -125,6 +140,12 @@ $(eval $(call TEST_TEMPLATE,CIA_SolveDeadlockTester))
 
 TESTS += CIA_DoOnceTester
 $(eval $(call TEST_TEMPLATE,CIA_DoOnceTester))
+
+TESTS += CIA_HierarchicalMutexTester
+$(eval $(call TEST_TEMPLATE,CIA_HierarchicalMutexTester))
+
+TESTS += CIA_UniqueLockTester
+$(eval $(call TEST_TEMPLATE,CIA_UniqueLockTester))
 
 TESTS += CIA_Concurrency_In_Action_CH4_Tester
 $(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH4_Tester))

@@ -1,126 +1,144 @@
 [
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++  -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -std=c++23 -o CMakeFiles/LearnCPP.dir/src/spreadsheet_cell.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/src/spreadsheet_cell.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/src/spreadsheet_cell.cc",
   "output": "CMakeFiles/LearnCPP.dir/src/spreadsheet_cell.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++  -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -std=c++23 -o CMakeFiles/LearnCPP.dir/src/main.cpp.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/src/main.cpp",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/src/main.cpp",
   "output": "CMakeFiles/LearnCPP.dir/src/main.cpp.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/main.cpp.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/main.cpp",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/main.cpp",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/main.cpp.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/src/spreadsheet_cell.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/src/spreadsheet_cell.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/src/spreadsheet_cell.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/src/spreadsheet_cell.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/CH1_test_one.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/CH1_test_one.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/CH1_test_one.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/CH1_test_one.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
+  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Managing_Threads.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/Concurrency_In_Action/Managing_Threads.cc",
+  "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/Concurrency_In_Action/Managing_Threads.cc",
+  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Managing_Threads.cc.o"
+},
+{
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
+  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Memory_Model_And_Operations_On_Amotic_Types.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/Concurrency_In_Action/Memory_Model_And_Operations_On_Amotic_Types.cc",
+  "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/Concurrency_In_Action/Memory_Model_And_Operations_On_Amotic_Types.cc",
+  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Memory_Model_And_Operations_On_Amotic_Types.cc.o"
+},
+{
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
+  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Sharing_Data_Between_Threads_Tester.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/Concurrency_In_Action/Sharing_Data_Between_Threads_Tester.cc",
+  "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/Concurrency_In_Action/Sharing_Data_Between_Threads_Tester.cc",
+  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Sharing_Data_Between_Threads_Tester.cc.o"
+},
+{
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
+  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Synchronizing_Concurrent_Operation_Tester.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/Concurrency_In_Action/Synchronizing_Concurrent_Operation_Tester.cc",
+  "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/Concurrency_In_Action/Synchronizing_Concurrent_Operation_Tester.cc",
+  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Synchronizing_Concurrent_Operation_Tester.cc.o"
+},
+{
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/ai_pointer.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/ai_pointer.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/ai_pointer.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/ai_pointer.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/const_usage.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/const_usage.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/const_usage.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/const_usage.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/AtomOperate.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/AtomOperate.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/AtomOperate.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/AtomOperate.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/Barrier.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/Barrier.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/Barrier.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/Barrier.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/CoroutineTest.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/CoroutineTest.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/CoroutineTest.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/CoroutineTest.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/DoOnce.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/DoOnce.cc",
-  "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/DoOnce.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/DoOnce.cc.o"
-},
-{
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/Latch.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/Latch.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/Latch.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/Latch.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/LockTest.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/LockTest.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/LockTest.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/LockTest.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/PromiseAndFutureTest.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/PromiseAndFutureTest.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/PromiseAndFutureTest.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/PromiseAndFutureTest.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/SemaphoreTest.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/SemaphoreTest.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/SemaphoreTest.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/SemaphoreTest.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/ThreadTest.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/ThreadTest.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_async/ThreadTest.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/ThreadTest.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_object/ClassTest.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_object/ClassTest.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/cpp_object/ClassTest.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_object/ClassTest.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/smart_pointer_tester.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/smart_pointer_tester.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/smart_pointer_tester.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/smart_pointer_tester.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/stl_tester.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/stl_tester.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/stl_tester.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/stl_tester.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/template_tester.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/template_tester.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/template_tester.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/template_tester.cc.o"
 },
 {
-  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build",
+  "directory": "/home/inmove/nvme1/Learn/LearnCPP/Codes/build/Debug",
   "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/usr/local/cuda-13.0/targets/x86_64-linux/include -I/home/inmove/nvme1/SourceCodes/googletest/googletest/include -I/home/inmove/nvme1/Learn/LearnCPP/Codes/include -isystem /home/inmove/.opt/opencv_cuda/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/tester.cc.o -c /home/inmove/nvme1/Learn/LearnCPP/Codes/tests/tester.cc",
   "file": "/home/inmove/nvme1/Learn/LearnCPP/Codes/tests/tester.cc",
   "output": "CMakeFiles/LearnCPP_Test.dir/tests/tester.cc.o"

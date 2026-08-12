@@ -96,17 +96,14 @@ TEST_F(Tester, CIA_AsyncTester) {
 TEST_F(Tester, CIA_AsyncStrategyTester) {
   auto heavyCompute = [](int n) {
     // deferred 输出的threadId与主线程的threadId一样
-    std::cout << "Thread ID " << std::this_thread::get_id()
-              << " start calculate....\n";
+    std::cout << "Thread ID " << std::this_thread::get_id() << " start calculate....\n";
     std::this_thread::sleep_for(std::chrono::seconds(2));
     return n * 10;
   };
   std::future<int> futAsync = std::async(std::launch::async, heavyCompute, 7);
-  std::cout << "async task submited, main thread id is "
-            << std::this_thread::get_id() << "\n";
+  std::cout << "async task submited, main thread id is " << std::this_thread::get_id() << "\n";
 
-  std::future<int> futDeferred =
-      std::async(std::launch::deferred, heavyCompute, 3);
+  std::future<int> futDeferred = std::async(std::launch::deferred, heavyCompute, 3);
   std::cout << "deferred task created, but not execute\n";
 
   std::this_thread::sleep_for(std::chrono::seconds(1));
