@@ -168,6 +168,12 @@ $(eval $(call TEST_TEMPLATE,CIA_PackagedTaskTester))
 TESTS += CIA_PromiseTester
 $(eval $(call TEST_TEMPLATE,CIA_PromiseTester))
 
+TESTS += STL_RangesTester
+$(eval $(call TEST_TEMPLATE,STL_RangesTester))
+
+TESTS += STL_UsefulFunctionsTester
+$(eval $(call TEST_TEMPLATE,STL_UsefulFunctionsTester))
+
 TESTS += AIPointerTester
 $(eval $(call TEST_TEMPLATE,AIPointerTester))
 
