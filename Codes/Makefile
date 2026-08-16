@@ -72,12 +72,6 @@ endef
 
 TESTS :=
 
-TESTS += _1_EmptyTest
-$(eval $(call TEST_TEMPLATE,_1_EmptyTest))
-
-TESTS += TestLoop
-$(eval $(call TEST_TEMPLATE,TestLoop))
-
 TESTS += CIA_Concurrency_In_Action_CH2_Tester
 $(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH2_Tester))
 
@@ -168,17 +162,8 @@ $(eval $(call TEST_TEMPLATE,CIA_PackagedTaskTester))
 TESTS += CIA_PromiseTester
 $(eval $(call TEST_TEMPLATE,CIA_PromiseTester))
 
-TESTS += STL_RangesTester
-$(eval $(call TEST_TEMPLATE,STL_RangesTester))
-
-TESTS += STL_UsefulFunctionsTester
-$(eval $(call TEST_TEMPLATE,STL_UsefulFunctionsTester))
-
-TESTS += AIPointerTester
-$(eval $(call TEST_TEMPLATE,AIPointerTester))
-
-TESTS += ConstTester
-$(eval $(call TEST_TEMPLATE,ConstTester))
+TESTS += DIDP_FactoryMethodTester
+$(eval $(call TEST_TEMPLATE,DIDP_FactoryMethodTester))
 
 TESTS += AtomicTester
 $(eval $(call TEST_TEMPLATE,AtomicTester))
@@ -263,21 +248,6 @@ $(eval $(call TEST_TEMPLATE,ThreadLocalTester))
 
 TESTS += ClassTest
 $(eval $(call TEST_TEMPLATE,ClassTest))
-
-TESTS += UniquePtrTester
-$(eval $(call TEST_TEMPLATE,UniquePtrTester))
-
-TESTS += EnableSharedFromThisTester
-$(eval $(call TEST_TEMPLATE,EnableSharedFromThisTester))
-
-TESTS += STLTester
-$(eval $(call TEST_TEMPLATE,STLTester))
-
-TESTS += EraseTester
-$(eval $(call TEST_TEMPLATE,EraseTester))
-
-TESTS += STLSortTester
-$(eval $(call TEST_TEMPLATE,STLSortTester))
 
 TESTS += TemplateTester
 $(eval $(call TEST_TEMPLATE,TemplateTester))
