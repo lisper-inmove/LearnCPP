@@ -162,6 +162,9 @@ $(eval $(call TEST_TEMPLATE,CIA_PackagedTaskTester))
 TESTS += CIA_PromiseTester
 $(eval $(call TEST_TEMPLATE,CIA_PromiseTester))
 
+TESTS += DIDP_AbstractFactoryTester
+$(eval $(call TEST_TEMPLATE,DIDP_AbstractFactoryTester))
+
 TESTS += DIDP_FactoryMethodTester
 $(eval $(call TEST_TEMPLATE,DIDP_FactoryMethodTester))
 
