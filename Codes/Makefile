@@ -75,6 +75,9 @@ TESTS :=
 TESTS += TCG_TemplateBasicTester
 $(eval $(call TEST_TEMPLATE,TCG_TemplateBasicTester))
 
+TESTS += TCG_TemplateOverloading_Tester
+$(eval $(call TEST_TEMPLATE,TCG_TemplateOverloading_Tester))
+
 TESTS += CIA_Concurrency_In_Action_CH2_Tester
 $(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH2_Tester))
 
@@ -173,6 +176,9 @@ $(eval $(call TEST_TEMPLATE,DIDP_Builder_Tester))
 
 TESTS += DIDP_FactoryMethodTester
 $(eval $(call TEST_TEMPLATE,DIDP_FactoryMethodTester))
+
+TESTS += MS_ValueCategory
+$(eval $(call TEST_TEMPLATE,MS_ValueCategory))
 
 TESTS += AtomicTester
 $(eval $(call TEST_TEMPLATE,AtomicTester))
