@@ -171,14 +171,23 @@ $(eval $(call TEST_TEMPLATE,CIA_PromiseTester))
 TESTS += DIDP_AbstractFactoryTester
 $(eval $(call TEST_TEMPLATE,DIDP_AbstractFactoryTester))
 
+TESTS += DIDP_Bridge_Tester
+$(eval $(call TEST_TEMPLATE,DIDP_Bridge_Tester))
+
 TESTS += DIDP_Builder_Tester
 $(eval $(call TEST_TEMPLATE,DIDP_Builder_Tester))
 
 TESTS += DIDP_FactoryMethodTester
 $(eval $(call TEST_TEMPLATE,DIDP_FactoryMethodTester))
 
-TESTS += MS_ValueCategory
-$(eval $(call TEST_TEMPLATE,MS_ValueCategory))
+TESTS += DIDP_Cloneable_Tester
+$(eval $(call TEST_TEMPLATE,DIDP_Cloneable_Tester))
+
+TESTS += DIDP_Cloneable2_Tester
+$(eval $(call TEST_TEMPLATE,DIDP_Cloneable2_Tester))
+
+TESTS += MS_Coping_As_Fallback_tester
+$(eval $(call TEST_TEMPLATE,MS_Coping_As_Fallback_tester))
 
 TESTS += AtomicTester
 $(eval $(call TEST_TEMPLATE,AtomicTester))
