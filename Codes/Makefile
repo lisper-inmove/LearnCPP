@@ -198,6 +198,9 @@ $(eval $(call TEST_TEMPLATE,DIDP_Cloneable2_Tester))
 TESTS += MS_Move_Tester
 $(eval $(call TEST_TEMPLATE,MS_Move_Tester))
 
+TESTS += MS_Initialize_Members_With_Move_Semantics_Tester
+$(eval $(call TEST_TEMPLATE,MS_Initialize_Members_With_Move_Semantics_Tester))
+
 TESTS += AtomicTester
 $(eval $(call TEST_TEMPLATE,AtomicTester))
 

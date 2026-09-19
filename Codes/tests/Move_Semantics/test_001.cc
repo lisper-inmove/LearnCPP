@@ -37,4 +37,44 @@ TEST_F(Tester, MS_Move_Tester) {
   std::cout << "Value of s1 is " << s1 << "\n";
 }
 
+class MyString {
+private:
+  std::string value_;
+
+public:
+  MyString(std::string value) : value_(value) {}
+  MyString(const MyString &obj) : value_(obj.value_) {
+    std::cout << "MyString copy constructor called \n";
+  }
+  MyString(MyString &&obj) : value_(std::move(obj.value_)) {
+    std::cout << "MyString move constructor called \n";
+  }
+
+  const std::string value() const { return value_; }
+};
+
+class Person {
+private:
+  MyString name_;
+
+public:
+  Person(MyString name) : name_(std::move(name)) {}
+
+  const std::string name() const { return name_.value(); }
+};
+
+TEST_F(Tester, MS_Initialize_Members_With_Move_Semantics_Tester) {
+  MyString name{"inmove"};
+  {
+    // First copy constructor called: 将name复制到Person构造函数的形参中
+    // then move constructor called: 将形参移动到name_中
+    Person p(name);
+    std::cout << "name " << name.value() << " # " << p.name() << "\n";
+  }
+
+  // Move constructor called only: 直接将实参移动到name_中
+  Person p2{MyString("inmove")};
+  std::cout << "name " << name.value() << " # " << p2.name() << "\n";
+}
+
 } // namespace cvtest::tester
