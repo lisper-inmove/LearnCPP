@@ -72,11 +72,11 @@ endef
 
 TESTS :=
 
-TESTS += TCG_TemplateBasicTester
-$(eval $(call TEST_TEMPLATE,TCG_TemplateBasicTester))
+TESTS += T_Function_Template
+$(eval $(call TEST_TEMPLATE,T_Function_Template))
 
-TESTS += TCG_TemplateOverloading_Tester
-$(eval $(call TEST_TEMPLATE,TCG_TemplateOverloading_Tester))
+TESTS += T_Return_Type_as_Common_Type
+$(eval $(call TEST_TEMPLATE,T_Return_Type_as_Common_Type))
 
 TESTS += CIA_Concurrency_In_Action_CH2_Tester
 $(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH2_Tester))
