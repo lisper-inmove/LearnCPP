@@ -7,23 +7,34 @@
 #include <iostream>
 namespace cvtest::tester {
 
-template <typename T> class MyVector {
-public:
-  void push_back(const T &elem) { std::cout << "Copy function called\n"; }
-  // void push_back(const T &&elem) { std::cout << "Const move function called\n"; }
-};
+void foo1(const std::string &lr) { std::cout << "copy foo1 called " << lr << "\n"; }
+void foo1(std::string &&rv) {
+  std::cout << "move foo1 called " << rv << "\n";
+  // 如果foo1函数，没有修改rv，实参将不会有改变
+  // rv[0] = 'A';
+  // rv.clear();
+}
+void foo2(const std::string &lr) { std::cout << "copy foo2 called " << lr << "\n"; }
+void foo3(std::string &lr) { std::cout << "copy foo3 called " << lr << "\n"; }
 
-const std::string getValue() { return "aosetuhsaoteuhsaoetuh"; }
+TEST_F(Tester, MS_Move_Tester) {
+  foo1("Hello World");
+  std::string s = "Hello World";
+  foo1(s);
 
-TEST_F(Tester, MS_Coping_As_Fallback_tester) {
-  MyVector<std::string> a;
-  const std::string b = "Hello World";
+  // 因为foo3的lr不是const的，所以不能用右值来调用
+  foo2("Hello World");
+  // foo3("Hello World");
 
-  // 移动语义的 push_back函数未实现时，实际被调用的是复制版本
-  a.push_back("aeosuth");
+  // std::move 等同于 static_cast的写法
+  std::string s0 = "Hello World";
+  foo1(static_cast<decltype(s0) &&>(s0));
 
-  a.push_back(std::move(b));
-  a.push_back(getValue());
+  std::string s1 = "Hello World";
+  foo1(static_cast<std::string &&>(s1));
+
+  // s1仅仅是被标记为数据可以拿走，但是最终还是由调用的函数来决定数据是否
+  std::cout << "Value of s1 is " << s1 << "\n";
 }
 
 } // namespace cvtest::tester
