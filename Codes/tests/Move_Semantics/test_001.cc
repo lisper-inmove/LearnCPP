@@ -5,6 +5,8 @@
  * */
 #include "tester.h"
 #include <iostream>
+#include <string>
+
 namespace cvtest::tester {
 
 void foo1(const std::string &lr) { std::cout << "copy foo1 called " << lr << "\n"; }

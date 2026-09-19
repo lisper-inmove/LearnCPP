@@ -189,6 +189,9 @@ $(eval $(call TEST_TEMPLATE,DIDP_Decorator_Tester))
 TESTS += DIDP_FactoryMethodTester
 $(eval $(call TEST_TEMPLATE,DIDP_FactoryMethodTester))
 
+TESTS += DIDP_Flyweight_Tester
+$(eval $(call TEST_TEMPLATE,DIDP_Flyweight_Tester))
+
 TESTS += DIDP_Cloneable_Tester
 $(eval $(call TEST_TEMPLATE,DIDP_Cloneable_Tester))
 

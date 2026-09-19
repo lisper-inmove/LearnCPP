@@ -1,14 +1,13 @@
-#include "tester.h"
-#include "gtest/gtest.h"
-#include <iostream>
-#include <memory>
-using namespace std::chrono_literals;
-
 /**
  * 原型模式
  * 原型模式是一种创建型模式。它的作用是使得你能在不依赖某一个类的情况下复制一个对象
  * 一个支持clone的对象，被称做原型
  * */
+
+#include "tester.h"
+#include "gtest/gtest.h"
+#include <memory>
+using namespace std::chrono_literals;
 
 namespace cvtest::tester {
 class Cloneable {
