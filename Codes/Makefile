@@ -183,6 +183,9 @@ $(eval $(call TEST_TEMPLATE,DIDP_Builder_Tester))
 TESTS += DIDP_Composite_Tester
 $(eval $(call TEST_TEMPLATE,DIDP_Composite_Tester))
 
+TESTS += DIDP_Decorator_Tester
+$(eval $(call TEST_TEMPLATE,DIDP_Decorator_Tester))
+
 TESTS += DIDP_FactoryMethodTester
 $(eval $(call TEST_TEMPLATE,DIDP_FactoryMethodTester))
 
