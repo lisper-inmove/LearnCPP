@@ -78,6 +78,12 @@ $(eval $(call TEST_TEMPLATE,T_Function_Template))
 TESTS += T_Return_Type_as_Common_Type
 $(eval $(call TEST_TEMPLATE,T_Return_Type_as_Common_Type))
 
+TESTS += T_Default_Template_Argument
+$(eval $(call TEST_TEMPLATE,T_Default_Template_Argument))
+
+TESTS += T_Overload_Template
+$(eval $(call TEST_TEMPLATE,T_Overload_Template))
+
 TESTS += CIA_Concurrency_In_Action_CH2_Tester
 $(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH2_Tester))
 
@@ -197,6 +203,9 @@ $(eval $(call TEST_TEMPLATE,DIDP_Cloneable_Tester))
 
 TESTS += DIDP_Cloneable2_Tester
 $(eval $(call TEST_TEMPLATE,DIDP_Cloneable2_Tester))
+
+TESTS += DIDP_Proxy_Tester
+$(eval $(call TEST_TEMPLATE,DIDP_Proxy_Tester))
 
 TESTS += MS_Move_Tester
 $(eval $(call TEST_TEMPLATE,MS_Move_Tester))
