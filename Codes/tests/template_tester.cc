@@ -75,8 +75,7 @@ template <typename T> constexpr T NewLine = T('\n');
 TEST_F(Tester, TemplateBaseTester) {
   const int a = 10, b = 20;
   auto maxValue = MyMax(a, b);
-  std::cout << "Max value fo " << a << " and " << b << " is " << maxValue
-            << "\n";
+  std::cout << "Max value fo " << a << " and " << b << " is " << maxValue << "\n";
 
   MyInt<int32_t> intValue{10};
   std::cout << "value of intValue is " << intValue.get() << "\n";
@@ -94,9 +93,7 @@ private:
 public:
   constexpr T const *data() const { return data_; }
   constexpr T &operator[](size_t const index) { return data_[index]; }
-  constexpr T const &operator[](size_t const index) const {
-    return data_[index];
-  }
+  constexpr T const &operator[](size_t const index) const { return data_[index]; }
 };
 
 // ------------------
@@ -117,8 +114,7 @@ public:
 };
 
 // 第二个参数 template需要的是从 Command里的一个 无参无返回值的成员函数
-template <typename Command, void (Command::*action)()>
-class MiniDevice : public Device {
+template <typename Command, void (Command::*action)()> class MiniDevice : public Device {
 public:
   MiniDevice(Command &command) : cmd(command) {}
 
@@ -144,17 +140,14 @@ TEST_F(Tester, NonTypeTemplateTester) {
   w2->output();
 
   // w3 w4 都是 Device
-  std::unique_ptr<Device> w3 =
-      std::make_unique<SmartDevice<&say_hello_in_english>>();
-  std::unique_ptr<Device> w4 =
-      std::make_unique<SmartDevice<&say_hello_in_spanish>>();
+  std::unique_ptr<Device> w3 = std::make_unique<SmartDevice<&say_hello_in_english>>();
+  std::unique_ptr<Device> w4 = std::make_unique<SmartDevice<&say_hello_in_spanish>>();
   static_assert(std::is_same_v<decltype(w3), decltype(w4)>);
   w3->output();
   w4->output();
 
   HelloCommand helloCmd;
-  auto w5 = std::make_unique<MiniDevice<HelloCommand, &HelloCommand::action>>(
-      helloCmd);
+  auto w5 = std::make_unique<MiniDevice<HelloCommand, &HelloCommand::action>>(helloCmd);
   w5->output();
 }
 
