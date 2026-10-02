@@ -234,6 +234,12 @@ $(eval $(call TEST_TEMPLATE,MS_Move_Tester))
 TESTS += MS_Initialize_Members_With_Move_Semantics_Tester
 $(eval $(call TEST_TEMPLATE,MS_Initialize_Members_With_Move_Semantics_Tester))
 
+TESTS += OpenCV_Image_Load_And_Save
+$(eval $(call TEST_TEMPLATE,OpenCV_Image_Load_And_Save))
+
+TESTS += OpenCV_Load_Video
+$(eval $(call TEST_TEMPLATE,OpenCV_Load_Video))
+
 TESTS += AtomicTester
 $(eval $(call TEST_TEMPLATE,AtomicTester))
 

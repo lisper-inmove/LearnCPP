@@ -48,7 +48,7 @@ public:
   MyString(const MyString &obj) : value_(obj.value_) {
     std::cout << "MyString copy constructor called \n";
   }
-  MyString(MyString &&obj) : value_(std::move(obj.value_)) {
+  MyString(MyString &&obj) noexcept : value_(std::move(obj.value_)) {
     std::cout << "MyString move constructor called \n";
   }
 
