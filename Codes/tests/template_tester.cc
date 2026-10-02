@@ -1,9 +1,6 @@
 #include "tester.h"
 #include "gtest/gtest.h"
-#include <cstdint>
 #include <iostream>
-#include <memory>
-#include <string>
 
 /**
  * C++ Template

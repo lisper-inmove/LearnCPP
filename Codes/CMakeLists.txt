@@ -25,6 +25,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   endif()
 endif()
 
+include(config/define.cmake)
 include(config/opencv.cmake)
 include(config/main.cmake)
 
