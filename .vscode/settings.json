@@ -38,5 +38,14 @@
         "console": "integratedTerminal"
     },
     "testMate.cpp.discovery.testListCaching": true,
-    "cmake.ctest.neverDebugTestsWithLaunchConfiguration": true
+    "cmake.ctest.neverDebugTestsWithLaunchConfiguration": true,
+    // --------------------- Clang-Format ---------------------
+    "editor.formatOnSave": true,
+    "clang-format.executable": "C:/Software/LLVM/bin/clang-format.exe",
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    }
 }

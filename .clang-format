@@ -1,0 +1,4 @@
+# 项目统一的格式化风格，与现有代码保持一致（LLVM 风格：2 空格缩进、大括号同行）
+BasedOnStyle: LLVM
+# 不重排注释，保留中文文档注释的手动对齐
+ReflowComments: false

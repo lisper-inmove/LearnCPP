@@ -103,7 +103,8 @@ TEST_F(Tester, OpenCV_Cal_Histogram) {
   float grayRange[] = {0, 256};
   const float *grayHistRange = {grayRange};
   int channels[] = {0};
-  cv::calcHist(&gray, 1, channels, cv::Mat(), grayHist, 1, &graySize, &grayHistRange);
+  cv::calcHist(&gray, 1, channels, cv::Mat(), grayHist, 1, &graySize,
+               &grayHistRange);
   drawHistogram2D(grayHist, "Gray Histgram", 256);
 
   cv::waitKey(0);
