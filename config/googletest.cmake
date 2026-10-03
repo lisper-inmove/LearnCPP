@@ -1,3 +1,7 @@
+if(WIN32)
+  # Windows下在vscode中使用 TestMate
+  include(CTest)
+endif()
 enable_testing()
 
 set(TEST_NAME "LearnCPP_Test")
@@ -22,12 +26,28 @@ target_link_libraries(${TEST_NAME}
     PRIVATE
     GTest::gtest_main     # 已经隐含依赖 GTest::gtest
     ${OpenCV_LIBS}
-    TBB::tbb
 )
+
+# TBB 仅在存在时链接（Linux 的 OpenCV 自带 TBB 目标，Windows 的没有）
+if(TARGET TBB::tbb)
+  target_link_libraries(${TEST_NAME} PRIVATE TBB::tbb)
+endif()
 
 # 让 gtest 支持多线程（如果用到 std::thread）
 find_package(Threads REQUIRED)
 target_link_libraries(${TEST_NAME} PRIVATE Threads::Threads)
+
+# Windows 下把运行时 DLL（OpenCV/TBB 等）复制到测试可执行文件旁边，
+# 保证 TestMate / ctest 在任何环境下都能直接运行测试
+if(WIN32)
+  add_custom_command(TARGET ${TEST_NAME} POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different
+          $<TARGET_RUNTIME_DLLS:${TEST_NAME}>
+          $<TARGET_FILE_DIR:${TEST_NAME}>
+      COMMAND_EXPAND_LISTS
+      COMMENT "Copying runtime DLLs next to ${TEST_NAME}"
+  )
+endif()
 
 # 测试发现
 include(GoogleTest)

@@ -49,7 +49,7 @@ TEST_F(Tester, OpenCV_Create_Mat) {
   cv::Mat m7;
   m2.copyTo(m7);
 
-  cv::Mat m8 = (cv::Mat_<double>(3, 3) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
+  cv::Mat m8(cv::Matx33d(0, -1, 0, -1, 5, -1, 0, -1, 0));
 }
 
 /**
@@ -69,7 +69,7 @@ TEST_F(Tester, OpenCV_Image_ROI) {
 TEST_F(Tester, OpenCV_Visit_Element) {
   int row = 3;
   int col = 3;
-  cv::Mat m1 = (cv::Mat_<double>(row, col) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
+  cv::Mat m1(cv::Matx33d(0, -1, 0, -1, 5, -1, 0, -1, 0));
   /**
    * 按像素点访问
    * 安全性高，效率低
@@ -157,8 +157,8 @@ template <typename T> void print_mat(cv::Mat src, int row = 3, int col = 3) {
 TEST_F(Tester, OpenCV_Arithmetic_Operation) {
   int row = 3;
   int col = 3;
-  cv::Mat src1 = (cv::Mat_<double>(row, col) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
-  cv::Mat src2 = (cv::Mat_<double>(row, col) << 1, 1, 1, 1, -5, 1, 1, 1, 1);
+  cv::Mat src1(cv::Matx33d(0, -1, 0, -1, 5, -1, 0, -1, 0));
+  cv::Mat src2(cv::Matx33d(1, 1, 1, 1, -5, 1, 1, 1, 1));
   cv::Mat dst;
   std::cout << "Source mat \n";
   print_mat<double>(src1, row, col);
@@ -208,8 +208,8 @@ TEST_F(Tester, OpenCV_Arithmetic_Operation) {
 TEST_F(Tester, OpenCV_Bit_Operation) {
   int row = 3;
   int col = 3;
-  cv::Mat src1 = (cv::Mat_<int>(row, col) << 0, 1, 0, 1, 5, 1, 0, 1, 0);
-  cv::Mat src2 = (cv::Mat_<int>(row, col) << 2, 2, 2, 2, 5, 2, 2, 3, 7);
+  cv::Mat src1(cv::Matx<int, 3, 3>(0, 1, 0, 1, 5, 1, 0, 1, 0));
+  cv::Mat src2(cv::Matx<int, 3, 3>(2, 2, 2, 2, 5, 2, 2, 3, 7));
   cv::Mat dst;
 
   std::cout << "bitewise_not \n";

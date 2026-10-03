@@ -1,7 +1,17 @@
 message(STATUS "OpenCV_DIR: ${OpenCV_DIR}")
 
-set(OpenCV_DIR "${OPENCV_SRC_DIR}/lib/cmake/opencv4")
-set(OpenCV_LIB_PATH "${OPENCV_SRC_DIR}/lib")
+if(WIN32)
+  set(OpenCV_DIR "${OPENCV_DIR}")
+  set(OpenCV_LIB_PATH "${OPENCV_DIR}/x64/vc18/lib")
+endif()
+
+if(LINUX)
+  set(OpenCV_DIR "${OPENCV_DIR}/lib/cmake/opencv4")
+  set(OpenCV_LIB_PATH "${OPENCV_DIR}/lib")
+endif()
+
+message(STATUS "OpenCV_DIR: ${OpenCV_DIR}")
+message(STATUS "OpenCV_LIB_PATH: ${OpenCV_LIB_PATH}")
 
 # 设置 CUDA 路径（现代方式）
 # set(CUDA_TOOLKIT_ROOT_DIR "/usr/local/cuda-13.0")

@@ -11,6 +11,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(config/define.cmake)
 
 # 设置编译选项
+if(MSVC)
+  # 源码为 UTF-8 编码，显式告诉 MSVC，避免中文按 GBK 误读
+  add_compile_options(/utf-8)
+endif()
+
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   # 启用更多警告
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -26,6 +31,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   endif()
 endif()
 
+message(STATUS "OpenCV_DIR before include opencv.cmake: ${OPENCV_DIR}")
 include(config/opencv.cmake)
 include(config/main.cmake)
 

@@ -1,4 +1,5 @@
 {
+    "cmake.generator": "Ninja",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -21,5 +22,20 @@
             }
         ]
     },
-    "cmake.sourceDirectory": "/home/inmove/nvme1/Learn/LearnCPP/Codes"
+    "cmake.sourceDirectory": "F:/codes/CPP/LearnCPP",
+    "cmake.ctest.testSuiteDelimiter": ".",
+    "cmake.ctest.parallelJobs": 4,
+    // --------------------- C++ TestMate ---------------------
+    "testMate.cpp.test.executables": "build/*/bin/LearnCPP_Test.exe",
+    "testMate.cpp.test.workingDirectory": "${workspaceFolder}",
+    "testMate.cpp.debug.configTemplate": {
+        "type": "cppvsdbg",
+        "request": "launch",
+        "program": "${exec}",
+        "args": "${argsArray}",
+        "cwd": "${cwd}",
+        "env": "${envObj}",
+        "console": "integratedTerminal"
+    },
+    "testMate.cpp.discovery.testListCaching": true
 }

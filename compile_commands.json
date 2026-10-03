@@ -1,218 +1,236 @@
 [
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++  -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -std=c++23 -o CMakeFiles/LearnCPP.dir/src/spreadsheet_cell.cc.o -c /home/inmove/code/LearnCPP/Codes/src/spreadsheet_cell.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/src/spreadsheet_cell.cc",
-  "output": "CMakeFiles/LearnCPP.dir/src/spreadsheet_cell.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 -std=c++23 /FoCMakeFiles\\LearnCPP.dir\\src\\spreadsheet_cell.cc.obj /FdCMakeFiles\\LearnCPP.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\src\\spreadsheet_cell.cc",
+  "file": "F:/codes/CPP/LearnCPP/src/spreadsheet_cell.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP.dir/src/spreadsheet_cell.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++  -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -std=c++23 -o CMakeFiles/LearnCPP.dir/src/main.cpp.o -c /home/inmove/code/LearnCPP/Codes/src/main.cpp",
-  "file": "/home/inmove/code/LearnCPP/Codes/src/main.cpp",
-  "output": "CMakeFiles/LearnCPP.dir/src/main.cpp.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 -std=c++23 /FoCMakeFiles\\LearnCPP.dir\\src\\main.cpp.obj /FdCMakeFiles\\LearnCPP.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\src\\main.cpp",
+  "file": "F:/codes/CPP/LearnCPP/src/main.cpp",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP.dir/src/main.cpp.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/main.cpp.o -c /home/inmove/code/LearnCPP/Codes/tests/main.cpp",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/main.cpp",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/main.cpp.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\main.cpp.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\main.cpp",
+  "file": "F:/codes/CPP/LearnCPP/tests/main.cpp",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/main.cpp.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/src/spreadsheet_cell.cc.o -c /home/inmove/code/LearnCPP/Codes/src/spreadsheet_cell.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/src/spreadsheet_cell.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/src/spreadsheet_cell.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\src\\spreadsheet_cell.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\src\\spreadsheet_cell.cc",
+  "file": "F:/codes/CPP/LearnCPP/src/spreadsheet_cell.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/src/spreadsheet_cell.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/CH1_Function_Templates_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/CPP_Templates_The_Complete_Guide/CH1_Function_Templates_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/CPP_Templates_The_Complete_Guide/CH1_Function_Templates_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/CH1_Function_Templates_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\CPP_Templates_The_Complete_Guide\\CH1_Function_Templates_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\CPP_Templates_The_Complete_Guide\\CH1_Function_Templates_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/CPP_Templates_The_Complete_Guide/CH1_Function_Templates_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/CH1_Function_Templates_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/CH2_Class_Templates.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/CPP_Templates_The_Complete_Guide/CH2_Class_Templates.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/CPP_Templates_The_Complete_Guide/CH2_Class_Templates.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/CH2_Class_Templates.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\CPP_Templates_The_Complete_Guide\\CH2_Class_Templates.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\CPP_Templates_The_Complete_Guide\\CH2_Class_Templates.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/CPP_Templates_The_Complete_Guide/CH2_Class_Templates.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/CH2_Class_Templates.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/CH5_Type_Traits_And_Type_Manipulation.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/CPP_Templates_The_Complete_Guide/CH5_Type_Traits_And_Type_Manipulation.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/CPP_Templates_The_Complete_Guide/CH5_Type_Traits_And_Type_Manipulation.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/CH5_Type_Traits_And_Type_Manipulation.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\CPP_Templates_The_Complete_Guide\\CH5_Type_Traits_And_Type_Manipulation.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\CPP_Templates_The_Complete_Guide\\CH5_Type_Traits_And_Type_Manipulation.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/CPP_Templates_The_Complete_Guide/CH5_Type_Traits_And_Type_Manipulation.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/CH5_Type_Traits_And_Type_Manipulation.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/Template_Concepts_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/CPP_Templates_The_Complete_Guide/Template_Concepts_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/CPP_Templates_The_Complete_Guide/Template_Concepts_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/Template_Concepts_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\CPP_Templates_The_Complete_Guide\\Template_Concepts_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\CPP_Templates_The_Complete_Guide\\Template_Concepts_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/CPP_Templates_The_Complete_Guide/Template_Concepts_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/CPP_Templates_The_Complete_Guide/Template_Concepts_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Managing_Threads.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Concurrency_In_Action/Managing_Threads.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Concurrency_In_Action/Managing_Threads.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Managing_Threads.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Concurrency_In_Action\\Managing_Threads.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Concurrency_In_Action\\Managing_Threads.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Concurrency_In_Action/Managing_Threads.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Managing_Threads.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Memory_Model_And_Operations_On_Amotic_Types.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Concurrency_In_Action/Memory_Model_And_Operations_On_Amotic_Types.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Concurrency_In_Action/Memory_Model_And_Operations_On_Amotic_Types.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Memory_Model_And_Operations_On_Amotic_Types.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Concurrency_In_Action\\Memory_Model_And_Operations_On_Amotic_Types.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Concurrency_In_Action\\Memory_Model_And_Operations_On_Amotic_Types.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Concurrency_In_Action/Memory_Model_And_Operations_On_Amotic_Types.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Memory_Model_And_Operations_On_Amotic_Types.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Sharing_Data_Between_Threads_Tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Concurrency_In_Action/Sharing_Data_Between_Threads_Tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Concurrency_In_Action/Sharing_Data_Between_Threads_Tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Sharing_Data_Between_Threads_Tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Concurrency_In_Action\\Sharing_Data_Between_Threads_Tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Concurrency_In_Action\\Sharing_Data_Between_Threads_Tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Concurrency_In_Action/Sharing_Data_Between_Threads_Tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Sharing_Data_Between_Threads_Tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Synchronizing_Concurrent_Operation_Tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Concurrency_In_Action/Synchronizing_Concurrent_Operation_Tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Concurrency_In_Action/Synchronizing_Concurrent_Operation_Tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Synchronizing_Concurrent_Operation_Tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Concurrency_In_Action\\Synchronizing_Concurrent_Operation_Tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Concurrency_In_Action\\Synchronizing_Concurrent_Operation_Tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Concurrency_In_Action/Synchronizing_Concurrent_Operation_Tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Concurrency_In_Action/Synchronizing_Concurrent_Operation_Tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Abstract_Factory_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Abstract_Factory_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Abstract_Factory_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Abstract_Factory_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Dive_Into_Design_Patterns\\Abstract_Factory_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Dive_Into_Design_Patterns\\Abstract_Factory_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Dive_Into_Design_Patterns/Abstract_Factory_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Abstract_Factory_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Adapter_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Adapter_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Adapter_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Adapter_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Dive_Into_Design_Patterns\\Adapter_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Dive_Into_Design_Patterns\\Adapter_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Dive_Into_Design_Patterns/Adapter_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Adapter_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Bridge_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Bridge_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Bridge_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Bridge_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Dive_Into_Design_Patterns\\Bridge_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Dive_Into_Design_Patterns\\Bridge_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Dive_Into_Design_Patterns/Bridge_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Bridge_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Builder_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Builder_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Builder_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Builder_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Dive_Into_Design_Patterns\\Builder_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Dive_Into_Design_Patterns\\Builder_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Dive_Into_Design_Patterns/Builder_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Builder_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Composite_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Composite_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Composite_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Composite_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Dive_Into_Design_Patterns\\Composite_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Dive_Into_Design_Patterns\\Composite_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Dive_Into_Design_Patterns/Composite_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Composite_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Decorator_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Decorator_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Decorator_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Decorator_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Dive_Into_Design_Patterns\\Decorator_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Dive_Into_Design_Patterns\\Decorator_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Dive_Into_Design_Patterns/Decorator_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Decorator_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Facade_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Facade_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Facade_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Facade_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Dive_Into_Design_Patterns\\Facade_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Dive_Into_Design_Patterns\\Facade_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Dive_Into_Design_Patterns/Facade_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Facade_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Factory_Method_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Factory_Method_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Factory_Method_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Factory_Method_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Dive_Into_Design_Patterns\\Factory_Method_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Dive_Into_Design_Patterns\\Factory_Method_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Dive_Into_Design_Patterns/Factory_Method_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Factory_Method_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Flyweight_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Flyweight_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Flyweight_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Flyweight_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Dive_Into_Design_Patterns\\Flyweight_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Dive_Into_Design_Patterns\\Flyweight_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Dive_Into_Design_Patterns/Flyweight_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Flyweight_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Prototype_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Prototype_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Prototype_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Prototype_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Dive_Into_Design_Patterns\\Prototype_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Dive_Into_Design_Patterns\\Prototype_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Dive_Into_Design_Patterns/Prototype_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Prototype_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Proxy_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Proxy_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Dive_Into_Design_Patterns/Proxy_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Proxy_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Dive_Into_Design_Patterns\\Proxy_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Dive_Into_Design_Patterns\\Proxy_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Dive_Into_Design_Patterns/Proxy_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Dive_Into_Design_Patterns/Proxy_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Interviewer/One.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Interviewer/One.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Interviewer/One.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Interviewer/One.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Interviewer\\One.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Interviewer\\One.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Interviewer/One.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Interviewer/One.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/Move_Semantics/test_001.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/Move_Semantics/test_001.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/Move_Semantics/test_001.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/Move_Semantics/test_001.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\Move_Semantics\\test_001.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\Move_Semantics\\test_001.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/Move_Semantics/test_001.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/Move_Semantics/test_001.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/AtomOperate.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/cpp_async/AtomOperate.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/cpp_async/AtomOperate.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/AtomOperate.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\OpenCV\\histgram_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\OpenCV\\histgram_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/OpenCV/histgram_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/OpenCV/histgram_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/Barrier.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/cpp_async/Barrier.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/cpp_async/Barrier.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/Barrier.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\OpenCV\\mat_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\OpenCV\\mat_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/OpenCV/mat_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/OpenCV/mat_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/CoroutineTest.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/cpp_async/CoroutineTest.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/cpp_async/CoroutineTest.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/CoroutineTest.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\OpenCV\\open_cv_basic_operation_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\OpenCV\\open_cv_basic_operation_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/OpenCV/open_cv_basic_operation_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/OpenCV/open_cv_basic_operation_tester.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/Latch.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/cpp_async/Latch.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/cpp_async/Latch.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/Latch.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\cpp_async\\AtomOperate.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\cpp_async\\AtomOperate.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/cpp_async/AtomOperate.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/AtomOperate.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/LockTest.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/cpp_async/LockTest.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/cpp_async/LockTest.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/LockTest.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\cpp_async\\Barrier.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\cpp_async\\Barrier.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/cpp_async/Barrier.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/Barrier.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/PromiseAndFutureTest.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/cpp_async/PromiseAndFutureTest.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/cpp_async/PromiseAndFutureTest.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/PromiseAndFutureTest.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\cpp_async\\CoroutineTest.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\cpp_async\\CoroutineTest.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/cpp_async/CoroutineTest.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/CoroutineTest.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/SemaphoreTest.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/cpp_async/SemaphoreTest.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/cpp_async/SemaphoreTest.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/SemaphoreTest.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\cpp_async\\Latch.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\cpp_async\\Latch.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/cpp_async/Latch.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/Latch.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/ThreadTest.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/cpp_async/ThreadTest.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/cpp_async/ThreadTest.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/ThreadTest.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\cpp_async\\LockTest.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\cpp_async\\LockTest.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/cpp_async/LockTest.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/LockTest.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/cpp_object/ClassTest.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/cpp_object/ClassTest.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/cpp_object/ClassTest.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/cpp_object/ClassTest.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\cpp_async\\PromiseAndFutureTest.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\cpp_async\\PromiseAndFutureTest.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/cpp_async/PromiseAndFutureTest.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/PromiseAndFutureTest.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/template_tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/template_tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/template_tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/template_tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\cpp_async\\SemaphoreTest.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\cpp_async\\SemaphoreTest.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/cpp_async/SemaphoreTest.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/SemaphoreTest.cc.obj"
 },
 {
-  "directory": "/home/inmove/code/LearnCPP/Codes/build-Debug",
-  "command": "/usr/bin/c++ -DTBB_USE_DEBUG -I/home/inmove/code/LearnCPP/Codes/include -isystem /usr/include/opencv4 -isystem /home/inmove/code/third_party/googletest/include -g -std=c++23 -Wall -Wextra -Wpedantic -g -O0 -o CMakeFiles/LearnCPP_Test.dir/tests/tester.cc.o -c /home/inmove/code/LearnCPP/Codes/tests/tester.cc",
-  "file": "/home/inmove/code/LearnCPP/Codes/tests/tester.cc",
-  "output": "CMakeFiles/LearnCPP_Test.dir/tests/tester.cc.o"
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\cpp_async\\ThreadTest.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\cpp_async\\ThreadTest.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/cpp_async/ThreadTest.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/cpp_async/ThreadTest.cc.obj"
+},
+{
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\cpp_object\\ClassTest.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\cpp_object\\ClassTest.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/cpp_object/ClassTest.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/cpp_object/ClassTest.cc.obj"
+},
+{
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\template_tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\template_tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/template_tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/template_tester.cc.obj"
+},
+{
+  "directory": "F:/codes/CPP/LearnCPP/build/debug",
+  "command": "C:\\Software\\VisualStudio\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IF:\\codes\\CPP\\LearnCPP\\include -external:IF:\\codes\\third_party_debug\\opencv\\include -external:IF:\\codes\\third_party_debug\\googletest\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++latest -MDd /utf-8 /FoCMakeFiles\\LearnCPP_Test.dir\\tests\\tester.cc.obj /FdCMakeFiles\\LearnCPP_Test.dir\\ /FS -c F:\\codes\\CPP\\LearnCPP\\tests\\tester.cc",
+  "file": "F:/codes/CPP/LearnCPP/tests/tester.cc",
+  "output": "F:/codes/CPP/LearnCPP/build/debug/CMakeFiles/LearnCPP_Test.dir/tests/tester.cc.obj"
 }
 ]
