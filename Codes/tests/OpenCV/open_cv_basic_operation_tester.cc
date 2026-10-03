@@ -1,6 +1,6 @@
 /**
  *
- * OpenCV Mat
+ * OpenCV Basic Operation
  *
  * */
 #include "tester.h"
@@ -80,7 +80,7 @@ TEST_F(Tester, OpenCV_Image_Load_And_Save) {
  * capture.open(url, CAP_ANY)
  *
  * */
-TEST_F(Tester, OpenCV_Load_Video) {
+TEST_F(Tester, OpenCV_Video_Load_And_Write) {
   cv::VideoCapture capture;
   bool flag = capture.open(test0Mp4_, cv::CAP_FFMPEG);
   double fps = capture.get(cv::CAP_PROP_FPS);

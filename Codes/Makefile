@@ -234,11 +234,29 @@ $(eval $(call TEST_TEMPLATE,MS_Move_Tester))
 TESTS += MS_Initialize_Members_With_Move_Semantics_Tester
 $(eval $(call TEST_TEMPLATE,MS_Initialize_Members_With_Move_Semantics_Tester))
 
+TESTS += OpenCV_Create_Mat
+$(eval $(call TEST_TEMPLATE,OpenCV_Create_Mat))
+
+TESTS += OpenCV_Image_ROI
+$(eval $(call TEST_TEMPLATE,OpenCV_Image_ROI))
+
+TESTS += OpenCV_Visit_Element
+$(eval $(call TEST_TEMPLATE,OpenCV_Visit_Element))
+
+TESTS += OpenCV_Arithmetic_Operation
+$(eval $(call TEST_TEMPLATE,OpenCV_Arithmetic_Operation))
+
+TESTS += OpenCV_Bit_Operation
+$(eval $(call TEST_TEMPLATE,OpenCV_Bit_Operation))
+
+TESTS += OpenCV_Image_Type_And_Channel
+$(eval $(call TEST_TEMPLATE,OpenCV_Image_Type_And_Channel))
+
 TESTS += OpenCV_Image_Load_And_Save
 $(eval $(call TEST_TEMPLATE,OpenCV_Image_Load_And_Save))
 
-TESTS += OpenCV_Load_Video
-$(eval $(call TEST_TEMPLATE,OpenCV_Load_Video))
+TESTS += OpenCV_Video_Load_And_Write
+$(eval $(call TEST_TEMPLATE,OpenCV_Video_Load_And_Write))
 
 TESTS += AtomicTester
 $(eval $(call TEST_TEMPLATE,AtomicTester))
