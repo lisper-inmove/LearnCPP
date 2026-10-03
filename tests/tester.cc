@@ -35,8 +35,6 @@ void Tester::drawHistogram2D(const cv::Mat &hist, const std::string &histName, i
     line(histImage, cv::Point(bin_w * (i - 1), hist_h - cvRound(hist_normalized.at<float>(i - 1))),
          cv::Point(bin_w * i, hist_h - cvRound(hist_normalized.at<float>(i))), color, 2, 8, 0);
   }
-
-  imshow(histName, histImage);
 }
 
 /**
@@ -86,8 +84,6 @@ void Tester::drawColorHistogram3Channel(const cv::Mat &src) {
     line(histImage, cv::Point(bin_w * (i - 1), hist_h - cvRound(r_hist.at<float>(i - 1))),
          cv::Point(bin_w * i, hist_h - cvRound(r_hist.at<float>(i))), cv::Scalar(0, 0, 255), 2);
   }
-
-  imshow("Color Histogram", histImage);
 }
 
 /**
@@ -161,8 +157,6 @@ void Tester::drawDetailedHistogram(const cv::Mat &gray) {
   // 添加Y轴标签
   putText(histImage, "Pixel Count", cv::Point(15, hist_h / 2), cv::FONT_HERSHEY_SIMPLEX, 0.6,
           cv::Scalar(200, 200, 200), 1, 8, true);
-
-  imshow("Detailed Histogram", histImage);
 }
 
 int Tester::sharpenValue(cv::Mat &image) {
