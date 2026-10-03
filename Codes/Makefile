@@ -234,6 +234,12 @@ $(eval $(call TEST_TEMPLATE,MS_Move_Tester))
 TESTS += MS_Initialize_Members_With_Move_Semantics_Tester
 $(eval $(call TEST_TEMPLATE,MS_Initialize_Members_With_Move_Semantics_Tester))
 
+TESTS += OpenCV_Pixel_Info_Statistics
+$(eval $(call TEST_TEMPLATE,OpenCV_Pixel_Info_Statistics))
+
+TESTS += OpenCV_Cal_Histogram
+$(eval $(call TEST_TEMPLATE,OpenCV_Cal_Histogram))
+
 TESTS += OpenCV_Create_Mat
 $(eval $(call TEST_TEMPLATE,OpenCV_Create_Mat))
 
