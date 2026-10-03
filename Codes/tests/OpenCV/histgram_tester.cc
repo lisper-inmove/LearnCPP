@@ -95,7 +95,18 @@ TEST_F(Tester, OpenCV_Pixel_Info_Statistics) {
  * */
 TEST_F(Tester, OpenCV_Cal_Histogram) {
   cv::Mat src = cv::imread(test0_, cv::IMREAD_COLOR);
-
   drawColorHistogram3Channel(src);
+
+  cv::Mat gray, grayHist;
+  cv::cvtColor(src, gray, cv::COLOR_BGR2GRAY);
+  int graySize = 256;
+  float grayRange[] = {0, 256};
+  const float *grayHistRange = {grayRange};
+  int channels[] = {0};
+  cv::calcHist(&gray, 1, channels, cv::Mat(), grayHist, 1, &graySize, &grayHistRange);
+  drawHistogram2D(grayHist, "Gray Histgram", 256);
+
+  cv::waitKey(0);
+  cv::destroyAllWindows();
 }
 } // namespace cvtest::tester

@@ -37,8 +37,6 @@ void Tester::drawHistogram2D(const cv::Mat &hist, const std::string &histName, i
   }
 
   imshow(histName, histImage);
-  cv::waitKey(0);
-  cv::destroyAllWindows();
 }
 
 /**
@@ -90,8 +88,6 @@ void Tester::drawColorHistogram3Channel(const cv::Mat &src) {
   }
 
   imshow("Color Histogram", histImage);
-  cv::waitKey(0);
-  cv::destroyAllWindows();
 }
 
 /**
@@ -167,8 +163,6 @@ void Tester::drawDetailedHistogram(const cv::Mat &gray) {
           cv::Scalar(200, 200, 200), 1, 8, true);
 
   imshow("Detailed Histogram", histImage);
-  cv::waitKey(0);
-  cv::destroyAllWindows();
 }
 
 int Tester::sharpenValue(cv::Mat &image) {
