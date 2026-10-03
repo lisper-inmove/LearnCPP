@@ -252,6 +252,12 @@ $(eval $(call TEST_TEMPLATE,OpenCV_Bit_Operation))
 TESTS += OpenCV_Image_Type_And_Channel
 $(eval $(call TEST_TEMPLATE,OpenCV_Image_Type_And_Channel))
 
+TESTS += OpenCV_Channel_Operation
+$(eval $(call TEST_TEMPLATE,OpenCV_Channel_Operation))
+
+TESTS += OpenCV_InRange
+$(eval $(call TEST_TEMPLATE,OpenCV_InRange))
+
 TESTS += OpenCV_Image_Load_And_Save
 $(eval $(call TEST_TEMPLATE,OpenCV_Image_Load_And_Save))
 

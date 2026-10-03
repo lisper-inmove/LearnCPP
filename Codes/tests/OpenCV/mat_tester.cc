@@ -317,4 +317,33 @@ TEST_F(Tester, OpenCV_Channel_Operation) {
   cv::merge(channels, dst);
 }
 
+/**
+ * void cv::inRange(
+ *  InputArray src,
+ *  InputArray lowerb,
+ *  InputArray upperb,
+ *  OutputArray dst
+ * )
+ * 判断图像中的像素是否在指定的范围内，并生成一张二值掩码图
+ * lowerb, upperb可以是Mat, Scalar, Int, Vector
+ * 当像素值在范围内时，输出255，否则输出0。多通道时，必须同时全部满足
+ * 如:
+ *  lowerb = Scalar(32, 32, 32)
+ *  upperb = Scalar(128, 128, 128)
+ *  当一个像素点为 Scalar(16, 90, 250)时
+ *  对应位置的mask的值为 Scalar(0, 0, 0)
+ *  另一个像素点为 Scalar(90, 90, 90)时
+ *  对应位置的mask的值为 Scalar(255, 255, 255)
+ * */
+TEST_F(Tester, OpenCV_InRange) {
+  cv::Mat dst;
+  cv::Mat image = cv::imread(test0_);
+  cv::Scalar upperb(128, 128, 128);
+  cv::Scalar lowerb(32, 32, 32);
+  cv::inRange(image, lowerb, upperb, dst);
+  cv::imshow("dst", dst);
+  cv::waitKey(3000);
+  cv::destroyAllWindows();
+}
+
 } // namespace cvtest::tester
