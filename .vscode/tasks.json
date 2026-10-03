@@ -15,6 +15,17 @@
                 "kind": "test",
                 "isDefault": true
             }
+        },
+        {
+            "label": "ctest: run all tests (verbose)",
+            "type": "shell",
+            "command": "ctest",
+            "args": [
+                "--test-dir", "${command:cmake.buildDirectory}",
+                "-V"
+            ],
+            "problemMatcher": [],
+            "group": "test"
         }
     ]
 }

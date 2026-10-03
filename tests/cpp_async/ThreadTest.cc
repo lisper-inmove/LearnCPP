@@ -25,6 +25,8 @@ TEST_F(Tester, AsyncTester) {
   std::cout << "C++ 异步编程" << "\n";
 
   std::cout << "总核心数 " << std::thread::hardware_concurrency() << "\n";
+
+  GTEST_LOG_(INFO) << "Main thread id is " << std::this_thread::get_id() << "\n";
 }
 
 // ----------------------- 创建线程 -------------------------------

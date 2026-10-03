@@ -37,5 +37,6 @@
         "env": "${envObj}",
         "console": "integratedTerminal"
     },
-    "testMate.cpp.discovery.testListCaching": true
+    "testMate.cpp.discovery.testListCaching": true,
+    "cmake.ctest.neverDebugTestsWithLaunchConfiguration": true
 }
