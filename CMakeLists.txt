@@ -8,6 +8,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # 生成编译命令数据库（用于VSCode等IDE）
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+include(config/define.cmake)
 
 # 设置编译选项
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -25,7 +26,6 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   endif()
 endif()
 
-include(config/define.cmake)
 include(config/opencv.cmake)
 include(config/main.cmake)
 
