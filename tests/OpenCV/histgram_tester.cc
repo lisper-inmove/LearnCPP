@@ -30,6 +30,7 @@
 #include "tester.h"
 #include <iostream>
 #include <opencv2/core.hpp>
+#include <opencv2/core/cvstd_wrapper.hpp>
 #include <opencv2/core/hal/interface.h>
 #include <opencv2/core/mat.hpp>
 #include <opencv2/core/types.hpp>
@@ -129,6 +130,32 @@ TEST_F(Tester, OpenCV_Equalize_Hist) {
   cv::imshow("Equalized", dst);
   drawHistogram2D(src, "Original Histgram");
   drawHistogram2D(dst, "Equalized Histgram");
+  cv::waitKey(0);
+  cv::destroyAllWindows();
+}
+
+/**
+ * 局部自适应直方图均衡化：对图像的局部区域进行对比度增强，使得局部细节更加清晰 
+ */
+TEST_F(Tester, OpenCV_Adaptive_Equalize_Hist) {
+  cv::Mat src = cv::imread(test0_, cv::IMREAD_GRAYSCALE);
+  cv::Mat dst;
+
+  // tileGridSize: 表示把输入图像分为多个 8x8 的像素风格
+  cv::Ptr<cv::CLAHE> clahe = cv::createCLAHE(2.0, cv::Size(8, 8));
+
+  // cv::Ptr<cv::CLAHE> clahe = cv::createCLAHE();
+  // // 对比度限制参数，默认是40
+  // // 直方图均衡化容易放大噪声，通过"裁剪"过高的直方图峰值，抑制噪声被过度增强。
+  // // 值越大，对比度增强越强；值越小，越平滑
+  // clahe->setClipLimit(4);
+
+  // 将均衡化应用到图片上，并保存在dst
+  clahe->apply(src, dst);
+  cv::imshow("Original", src);
+  cv::imshow("Adaptive Equalized", dst);
+  drawHistogram2D(src, "Original Histgram");
+  drawHistogram2D(dst, "Adaptive Equalized Histgram");
   cv::waitKey(0);
   cv::destroyAllWindows();
 }
