@@ -24,7 +24,9 @@ protected:
   void drawHistogram2D(const cv::Mat &hist, const std::string &histName,
                        int histSize);
   void drawHistogram2D(const cv::Mat &gray, const std::string &histName);
-  void drawColorHistogram3Channel(const cv::Mat &src);
+  void drawColorHistogram3Channel(const cv::Mat &src,
+                                  const std::string &winName =
+                                      "Color Image Histogram");
   void drawDetailedHistogram(const cv::Mat &gray);
   int calculateLaplacianSum(const cv::Mat &src);
 

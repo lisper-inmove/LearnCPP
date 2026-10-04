@@ -181,8 +181,9 @@ TEST_F(Tester, OpenCV_Color_Equalize_Hist) {
   cv::cvtColor(hsv, dst, cv::COLOR_HSV2BGR);
   cv::imshow("Original", src);
   cv::imshow("Equalized", dst);
-  drawColorHistogram3Channel(src);
-  drawColorHistogram3Channel(dst);
+  // 两个直方图用不同窗口标题，避免后一次 imshow 覆盖前一次
+  drawColorHistogram3Channel(src, "Original Color Histgram");
+  drawColorHistogram3Channel(dst, "Equalized Color Histgram");
   cv::waitKey(0);
   cv::destroyAllWindows();
 }
