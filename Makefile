@@ -243,6 +243,12 @@ $(eval $(call TEST_TEMPLATE,OpenCV_Cal_Histogram))
 TESTS += OpenCV_Equalize_Hist
 $(eval $(call TEST_TEMPLATE,OpenCV_Equalize_Hist))
 
+TESTS += OpenCV_Adaptive_Equalize_Hist
+$(eval $(call TEST_TEMPLATE,OpenCV_Adaptive_Equalize_Hist))
+
+TESTS += OpenCV_Color_Equalize_Hist
+$(eval $(call TEST_TEMPLATE,OpenCV_Color_Equalize_Hist))
+
 TESTS += OpenCV_Create_Mat
 $(eval $(call TEST_TEMPLATE,OpenCV_Create_Mat))
 

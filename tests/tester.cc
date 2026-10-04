@@ -39,6 +39,7 @@ void Tester::drawHistogram2D(const cv::Mat &hist, const std::string &histName,
          cv::Point(bin_w * i, hist_h - cvRound(hist_normalized.at<float>(i))),
          color, 2, 8, 0);
   }
+  cv::imshow(histName, histImage);
 }
 
 void Tester::drawHistogram2D(const cv::Mat &gray, const std::string &histName) {
@@ -108,6 +109,7 @@ void Tester::drawColorHistogram3Channel(const cv::Mat &src) {
          cv::Point(bin_w * i, hist_h - cvRound(r_hist.at<float>(i))),
          cv::Scalar(0, 0, 255), 2);
   }
+  cv::imshow("Color Image Histogram", histImage);
 }
 
 /**
