@@ -5,7 +5,8 @@
  *  横轴通常为0~255
  *  纵轴通常为灰度像素或归一化的频率
  * 它的主要作用如下:
- *  1. 描述图像灰度分布。可以直观看出图像偏暗，偏亮，对比度高低，动态范围是否充分利用
+ *  1.
+ * 描述图像灰度分布。可以直观看出图像偏暗，偏亮，对比度高低，动态范围是否充分利用
  *      如果像素集中在低灰度区说明图像偏暗，集中在窄区说明对比度低
  *  2. 判断图像质量与曝光情况
  *      直方图可辅助分析是否欠曝，过曝，低对比度或灰度分布不均
@@ -19,8 +20,8 @@
  *      用 cv2.compareHist()
  *      比较两幅图像直方图，可判断灰度分布是否相似，常用于图像检索、匹配和简单分类。它对平移、旋转较不敏感，但丢失空间信息。
  *  6. 直方图反向投影与目标跟踪
- *      cv2.calcBackProject() 可根据目标区域直方图生成概率图，常用于 CamShift、MeanShift
- *      等目标跟踪算法。
+ *      cv2.calcBackProject() 可根据目标区域直方图生成概率图，常用于
+ * CamShift、MeanShift 等目标跟踪算法。
  *  7. 作为图像统计特征
  *      由直方图可计算均值、方差、偏度、峰度、熵、能量等特征，用于图像分类、质量评价和内容分析。
  *  8. 评估图像处理效果
@@ -110,4 +111,26 @@ TEST_F(Tester, OpenCV_Cal_Histogram) {
   cv::waitKey(0);
   cv::destroyAllWindows();
 }
+
+/**
+ * 直方图均衡化：调整图像的对比度，使得灰度值分布更加均匀
+ * cv::equalizeHist(
+ *  InputArray src,
+ *  OutputArray dst
+ * )
+ * src: 输入灰度图像
+ * dst: 输出均衡化后的图像
+ * */
+TEST_F(Tester, OpenCV_Equalize_Hist) {
+  cv::Mat src = cv::imread(test0_, cv::IMREAD_GRAYSCALE);
+  cv::Mat dst;
+  cv::equalizeHist(src, dst);
+  cv::imshow("Original", src);
+  cv::imshow("Equalized", dst);
+  drawHistogram2D(src, "Original Histgram");
+  drawHistogram2D(dst, "Equalized Histgram");
+  cv::waitKey(0);
+  cv::destroyAllWindows();
+}
+
 } // namespace cvtest::tester

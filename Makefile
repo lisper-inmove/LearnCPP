@@ -240,6 +240,9 @@ $(eval $(call TEST_TEMPLATE,OpenCV_Pixel_Info_Statistics))
 TESTS += OpenCV_Cal_Histogram
 $(eval $(call TEST_TEMPLATE,OpenCV_Cal_Histogram))
 
+TESTS += OpenCV_Equalize_Hist
+$(eval $(call TEST_TEMPLATE,OpenCV_Equalize_Hist))
+
 TESTS += OpenCV_Create_Mat
 $(eval $(call TEST_TEMPLATE,OpenCV_Create_Mat))
 

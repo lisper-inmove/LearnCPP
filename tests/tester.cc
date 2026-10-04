@@ -15,7 +15,8 @@ void Tester::TearDown() {}
  * @param histSize 直方图的bins数量
  * @param color 绘制颜色（BGR格式）
  */
-void Tester::drawHistogram2D(const cv::Mat &hist, const std::string &histName, int histSize) {
+void Tester::drawHistogram2D(const cv::Mat &hist, const std::string &histName,
+                             int histSize) {
   // 归一化直方图到 0-400 高度范围
   cv::Mat hist_normalized;
   normalize(hist, hist_normalized, 0, 400, cv::NORM_MINMAX, -1, cv::Mat());
@@ -32,9 +33,23 @@ void Tester::drawHistogram2D(const cv::Mat &hist, const std::string &histName, i
 
   // 绘制直方图
   for (int i = 1; i < histSize; i++) {
-    line(histImage, cv::Point(bin_w * (i - 1), hist_h - cvRound(hist_normalized.at<float>(i - 1))),
-         cv::Point(bin_w * i, hist_h - cvRound(hist_normalized.at<float>(i))), color, 2, 8, 0);
+    line(histImage,
+         cv::Point(bin_w * (i - 1),
+                   hist_h - cvRound(hist_normalized.at<float>(i - 1))),
+         cv::Point(bin_w * i, hist_h - cvRound(hist_normalized.at<float>(i))),
+         color, 2, 8, 0);
   }
+}
+
+void Tester::drawHistogram2D(const cv::Mat &gray, const std::string &histName) {
+  cv::Mat grayHist;
+  int graySize = 256;
+  float grayRange[] = {0, 256};
+  const float *grayHistRange = {grayRange};
+  int channels[] = {0};
+  cv::calcHist(&gray, 1, channels, cv::Mat(), grayHist, 1, &graySize,
+               &grayHistRange);
+  drawHistogram2D(grayHist, histName, graySize);
 }
 
 /**
@@ -55,9 +70,12 @@ void Tester::drawColorHistogram3Channel(const cv::Mat &src) {
   int channels[] = {0};
 
   cv::Mat b_hist, g_hist, r_hist;
-  calcHist(&bgr_planes[0], 1, channels, cv::Mat(), b_hist, 1, &histSize, &histRange);
-  calcHist(&bgr_planes[1], 1, channels, cv::Mat(), g_hist, 1, &histSize, &histRange);
-  calcHist(&bgr_planes[2], 1, channels, cv::Mat(), r_hist, 1, &histSize, &histRange);
+  calcHist(&bgr_planes[0], 1, channels, cv::Mat(), b_hist, 1, &histSize,
+           &histRange);
+  calcHist(&bgr_planes[1], 1, channels, cv::Mat(), g_hist, 1, &histSize,
+           &histRange);
+  calcHist(&bgr_planes[2], 1, channels, cv::Mat(), r_hist, 1, &histSize,
+           &histRange);
 
   // 归一化
   int hist_h = 400;
@@ -73,16 +91,22 @@ void Tester::drawColorHistogram3Channel(const cv::Mat &src) {
   // 绘制三条曲线
   for (int i = 1; i < histSize; i++) {
     // 蓝色通道
-    line(histImage, cv::Point(bin_w * (i - 1), hist_h - cvRound(b_hist.at<float>(i - 1))),
-         cv::Point(bin_w * i, hist_h - cvRound(b_hist.at<float>(i))), cv::Scalar(255, 0, 0), 2);
+    line(histImage,
+         cv::Point(bin_w * (i - 1), hist_h - cvRound(b_hist.at<float>(i - 1))),
+         cv::Point(bin_w * i, hist_h - cvRound(b_hist.at<float>(i))),
+         cv::Scalar(255, 0, 0), 2);
 
     // 绿色通道
-    line(histImage, cv::Point(bin_w * (i - 1), hist_h - cvRound(g_hist.at<float>(i - 1))),
-         cv::Point(bin_w * i, hist_h - cvRound(g_hist.at<float>(i))), cv::Scalar(0, 255, 0), 2);
+    line(histImage,
+         cv::Point(bin_w * (i - 1), hist_h - cvRound(g_hist.at<float>(i - 1))),
+         cv::Point(bin_w * i, hist_h - cvRound(g_hist.at<float>(i))),
+         cv::Scalar(0, 255, 0), 2);
 
     // 红色通道
-    line(histImage, cv::Point(bin_w * (i - 1), hist_h - cvRound(r_hist.at<float>(i - 1))),
-         cv::Point(bin_w * i, hist_h - cvRound(r_hist.at<float>(i))), cv::Scalar(0, 0, 255), 2);
+    line(histImage,
+         cv::Point(bin_w * (i - 1), hist_h - cvRound(r_hist.at<float>(i - 1))),
+         cv::Point(bin_w * i, hist_h - cvRound(r_hist.at<float>(i))),
+         cv::Scalar(0, 0, 255), 2);
   }
 }
 
@@ -123,11 +147,12 @@ void Tester::drawDetailedHistogram(const cv::Mat &gray) {
   // 绘制网格线
   for (int i = 0; i <= 4; i++) {
     int y = hist_h - 50 - i * (hist_h - 50) / 4;
-    line(histImage, cv::Point(60, y), cv::Point(hist_w - 10, y), cv::Scalar(100, 100, 100), 1);
+    line(histImage, cv::Point(60, y), cv::Point(hist_w - 10, y),
+         cv::Scalar(100, 100, 100), 1);
     // 添加Y轴标签
     std::string label = std::to_string(i * (int)maxVal / 4);
-    putText(histImage, label, cv::Point(10, y + 5), cv::FONT_HERSHEY_SIMPLEX, 0.5,
-            cv::Scalar(200, 200, 200));
+    putText(histImage, label, cv::Point(10, y + 5), cv::FONT_HERSHEY_SIMPLEX,
+            0.5, cv::Scalar(200, 200, 200));
   }
 
   int bin_w = cvRound((double)(hist_w - 70) / histSize);
@@ -136,27 +161,31 @@ void Tester::drawDetailedHistogram(const cv::Mat &gray) {
   for (int i = 0; i < histSize; i++) {
     int height = cvRound(hist_normalized.at<float>(i));
     rectangle(histImage, cv::Point(60 + bin_w * i, hist_h - 50),
-              cv::Point(60 + bin_w * (i + 1), hist_h - 50 - height), cv::Scalar(100, 100, 255), -1);
+              cv::Point(60 + bin_w * (i + 1), hist_h - 50 - height),
+              cv::Scalar(100, 100, 255), -1);
   }
 
   // 绘制X轴和Y轴
-  line(histImage, cv::Point(50, hist_h - 50), cv::Point(hist_w - 10, hist_h - 50),
+  line(histImage, cv::Point(50, hist_h - 50),
+       cv::Point(hist_w - 10, hist_h - 50), cv::Scalar(255, 255, 255), 2);
+  line(histImage, cv::Point(50, 30), cv::Point(50, hist_h - 50),
        cv::Scalar(255, 255, 255), 2);
-  line(histImage, cv::Point(50, 30), cv::Point(50, hist_h - 50), cv::Scalar(255, 255, 255), 2);
 
   // 添加统计信息文字
-  std::string info =
-      cv::format("Mean: %.2f  StdDev: %.2f  Max Count: %.0f", mean[0], stddev[0], maxVal);
-  putText(histImage, info, cv::Point(60, 30), cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(0, 255, 0),
-          2);
+  std::string info = cv::format("Mean: %.2f  StdDev: %.2f  Max Count: %.0f",
+                                mean[0], stddev[0], maxVal);
+  putText(histImage, info, cv::Point(60, 30), cv::FONT_HERSHEY_SIMPLEX, 0.6,
+          cv::Scalar(0, 255, 0), 2);
 
   // 添加X轴标签
   putText(histImage, "Pixel Intensity", cv::Point(hist_w / 2, hist_h - 10),
           cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(200, 200, 200));
 
   // 添加Y轴标签
-  putText(histImage, "Pixel Count", cv::Point(15, hist_h / 2), cv::FONT_HERSHEY_SIMPLEX, 0.6,
-          cv::Scalar(200, 200, 200), 1, 8, true);
+  putText(histImage, "Pixel Count", cv::Point(15, hist_h / 2),
+          cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(200, 200, 200), 1, 8, true);
+
+  imshow("Detailed Histogram", histImage);
 }
 
 int Tester::sharpenValue(cv::Mat &image) {
