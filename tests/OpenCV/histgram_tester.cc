@@ -160,4 +160,31 @@ TEST_F(Tester, OpenCV_Adaptive_Equalize_Hist) {
   cv::destroyAllWindows();
 }
 
+/**
+ * 彩色图像直方图均衡化
+ *  先将图像转换成HSV色彩空间
+ *  然后对V通道进行直方图均衡化
+ */
+TEST_F(Tester, OpenCV_Color_Equalize_Hist) {
+  cv::Mat src = cv::imread(test0_, cv::IMREAD_COLOR);
+  cv::Mat hsv, dst;
+  // 将BGR转成HSV
+  cv::cvtColor(src, hsv, cv::COLOR_BGR2HSV);
+  // 通道分离
+  std::vector<cv::Mat> channels;
+  cv::split(hsv, channels);
+  // 将V通道进行直方图均衡化
+  cv::equalizeHist(channels[2], channels[2]);
+  // 合并通道并转换回HSV
+  cv::merge(channels, hsv);
+  // 将HSV图像转换回BGR图像
+  cv::cvtColor(hsv, dst, cv::COLOR_HSV2BGR);
+  cv::imshow("Original", src);
+  cv::imshow("Equalized", dst);
+  drawColorHistogram3Channel(src);
+  drawColorHistogram3Channel(dst);
+  cv::waitKey(0);
+  cv::destroyAllWindows();
+}
+
 } // namespace cvtest::tester
