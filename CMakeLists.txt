@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(LearnCPP VERSION 1.0.0 LANGUAGES CXX)
 
 # 设置C++23标准
-set(CMAKE_CXX_STANDARD 23)
+# set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -35,16 +35,10 @@ message(STATUS "OpenCV_DIR before include opencv.cmake: ${OPENCV_DIR}")
 include(config/opencv.cmake)
 include(config/main.cmake)
 
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
-target_compile_options(${PROJECT_NAME} PRIVATE -std=c++23)
+# target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
+# target_compile_options(${PROJECT_NAME} PRIVATE -std=c++23)
 
-if(WIN32)
-  include(config/windows/windows.cmake)
-endif()
-
-if(LINUX)
-  include(config/linux/linux.cmake)
-endif()
+include(config/linux/linux.cmake)
 
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different

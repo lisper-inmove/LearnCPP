@@ -153,6 +153,7 @@ TEST_F(Tester, NonTypeTemplateTester) {
 
 template <typename T> class SimpleWrapper {
 public:
+  SimpleWrapper(T const v) : value(v) {}
   T value;
 };
 

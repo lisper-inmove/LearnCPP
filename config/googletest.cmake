@@ -1,11 +1,10 @@
-if(WIN32)
-  # Windows下在vscode中使用 TestMate
-  include(CTest)
-endif()
 enable_testing()
 
 set(TEST_NAME "LearnCPP_Test")
 set(GTest_DIR "${GOOGLE_TEST_DIR}/lib/cmake/GTest")
+set(THREADS_PREFER_PTHREAD_FLAG OFF)
+find_package(Threads REQUIRED)
+find_package(GTest CONFIG REQUIRED)
 
 file(GLOB_RECURSE SRC_LIST CONFIGURE_DEPENDS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cc)
@@ -16,7 +15,7 @@ add_executable(${TEST_NAME} tests/main.cpp ${SRC_LIST} ${TEST_SRC_LIST})
 
 # --------------------- GoogleTest -----------------------------
 # 用 CMake 官方的 find_package，而不是手动拼 .lib / -lgtest
-find_package(GTest REQUIRED)
+# find_package(GTest REQUIRED)
 
 target_include_directories(${TEST_NAME} PRIVATE
     ${PROJECT_SOURCE_DIR}/include)
@@ -34,20 +33,8 @@ if(TARGET TBB::tbb)
 endif()
 
 # 让 gtest 支持多线程（如果用到 std::thread）
-find_package(Threads REQUIRED)
-target_link_libraries(${TEST_NAME} PRIVATE Threads::Threads)
-
-# Windows 下把运行时 DLL（OpenCV/TBB 等）复制到测试可执行文件旁边，
-# 保证 TestMate / ctest 在任何环境下都能直接运行测试
-if(WIN32)
-  add_custom_command(TARGET ${TEST_NAME} POST_BUILD
-      COMMAND ${CMAKE_COMMAND} -E copy_if_different
-          $<TARGET_RUNTIME_DLLS:${TEST_NAME}>
-          $<TARGET_FILE_DIR:${TEST_NAME}>
-      COMMAND_EXPAND_LISTS
-      COMMENT "Copying runtime DLLs next to ${TEST_NAME}"
-  )
-endif()
+# find_package(Threads REQUIRED)
+# target_link_libraries(${TEST_NAME} PRIVATE Threads::Threads)
 
 # 测试发现
 include(GoogleTest)

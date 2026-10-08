@@ -1,14 +1,7 @@
 message(STATUS "OpenCV_DIR: ${OpenCV_DIR}")
 
-if(WIN32)
-  set(OpenCV_DIR "${OPENCV_DIR}")
-  set(OpenCV_LIB_PATH "${OPENCV_DIR}/x64/vc18/lib")
-endif()
-
-if(LINUX)
-  set(OpenCV_DIR "${OPENCV_DIR}/lib/cmake/opencv4")
-  set(OpenCV_LIB_PATH "${OPENCV_DIR}/lib")
-endif()
+set(OpenCV_DIR "${OPENCV_DIR}/lib/cmake/opencv4")
+set(OpenCV_LIB_PATH "${OPENCV_DIR}/lib")
 
 message(STATUS "OpenCV_DIR: ${OpenCV_DIR}")
 message(STATUS "OpenCV_LIB_PATH: ${OpenCV_LIB_PATH}")
