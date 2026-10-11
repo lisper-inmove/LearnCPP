@@ -249,6 +249,9 @@ $(eval $(call TEST_TEMPLATE,OpenCV_Adaptive_Equalize_Hist))
 TESTS += OpenCV_Color_Equalize_Hist
 $(eval $(call TEST_TEMPLATE,OpenCV_Color_Equalize_Hist))
 
+TESTS += OpenCV_Hist_Comppare
+$(eval $(call TEST_TEMPLATE,OpenCV_Hist_Comppare))
+
 TESTS += OpenCV_Create_Mat
 $(eval $(call TEST_TEMPLATE,OpenCV_Create_Mat))
 

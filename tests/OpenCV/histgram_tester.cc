@@ -30,6 +30,7 @@
 #include "tester.h"
 #include <iostream>
 #include <opencv2/core.hpp>
+#include <opencv2/core/base.hpp>
 #include <opencv2/core/cvstd_wrapper.hpp>
 #include <opencv2/core/hal/interface.h>
 #include <opencv2/core/mat.hpp>
@@ -38,6 +39,7 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/videoio.hpp>
+#include <string>
 
 namespace cvtest::tester {
 /**
@@ -92,6 +94,9 @@ TEST_F(Tester, OpenCV_Pixel_Info_Statistics) {
  * histSize: 直方图大小，可以理解为X轴上的直方图的取值范围
  *            假设为0~31，那么这32个级别会将0~255分成32份
  * ranges: 通道的取值范围RGB通常为0~256, HSV通常为 0~180
+ *  float h_ranges[] = {0, 180};
+ *  float s_ranges[] = {0, 256};
+ *  float *ranges[] = {h_ranges, s_ranges};
  * uniform: 一致性，对边界数据的处理方式，取false表示不处理
  * accumulate: 是否计算累积直方图
  * */
@@ -186,6 +191,60 @@ TEST_F(Tester, OpenCV_Color_Equalize_Hist) {
   drawColorHistogram3Channel(dst, "Equalized Color Histgram");
   cv::waitKey(0);
   cv::destroyAllWindows();
+}
+
+/**
+ * 直方图的比较
+ * double cv::compareHist(
+ *  InputArray h1, InputArray h2, int method
+ * )
+ * 1. h1, h2 是两个图片直方图的数据
+ * 2. method:
+ *  HISTCMP_CORREL: 相关性相似比较
+ *  HISTCMP_CHISQR: 卡方相似性比较
+ *  HIST_CMP_INTERSECT: 交叉相似比较
+ *  HISTCMP_BHATTACHARYYA: 巴氏距离相似性比较
+ *  HISTCMP_HELLINGER: 海林格距离相似比较
+ *  HISTCMP_CHISQR_ALT: 可变卡方相似比较
+ *  HISTCMP_KL_DIV: 基于KL散度相似比较
+ * */
+TEST_F(Tester, OpenCV_Hist_Comppare) {
+  cv::Mat src1 = cv::imread(test0_, cv::IMREAD_COLOR);
+  cv::Mat src2 = cv::imread(test0New_, cv::IMREAD_COLOR);
+
+  cv::Mat hsv1, hsv2;
+  cv::cvtColor(src1, hsv1, cv::COLOR_BGR2HSV);
+  cv::cvtColor(src2, hsv2, cv::COLOR_BGR2HSV);
+
+  int h_bins = 60;
+  int s_bins = 64;
+
+  int histSize[] = {h_bins, s_bins};
+
+  // h通道, 0~180
+  float h_ranges[] = {0, 180};
+  // s通道, 0~256
+  float s_ranges[] = {0, 256};
+
+  const float *ranges[] = {h_ranges, s_ranges};
+  int channels[] = {0, 1};
+  cv::Mat hist1, hist2;
+  cv::calcHist(&hsv1, 1, channels, cv::Mat(), hist1, 2, histSize, ranges, true,
+               false);
+  cv::calcHist(&hsv2, 1, channels, cv::Mat(), hist2, 2, histSize, ranges, true,
+               false);
+
+  cv::normalize(hist1, hist1, 0, 1, cv::NORM_MINMAX, -1, cv::Mat());
+  cv::normalize(hist2, hist2, 0, 1, cv::NORM_MINMAX, -1, cv::Mat());
+  std::string methods[] = {"HISTCMP_CORREL", "HISTCMP_CHISQR",
+                           "HISTCMP_INTERSECT", "HISTCMP_BHATTACHARYYA"};
+
+  for (int i = 0; i < 4; i++) {
+    int compare_method = i;
+    double src1_src2 = cv::compareHist(hist1, hist2, compare_method);
+    std::cout << " Method [" << methods[i].c_str() << "]: " << src1_src2
+              << "\n";
+  }
 }
 
 } // namespace cvtest::tester
