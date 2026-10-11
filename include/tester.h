@@ -19,14 +19,16 @@ protected:
       (std::filesystem::path(assets_) / "test0.mp4").string();
   std::string test0Mp4New_ =
       (std::filesystem::path(assets_) / "test0New.mp4").string();
+  std::string grape_ = (std::filesystem::path(assets_) / "grape.png").string();
+  std::string grapeTplp_ =
+      (std::filesystem::path(assets_) / "grape_tpl.png").string();
 
   int sharpenValue(cv::Mat &image);
   void drawHistogram2D(const cv::Mat &hist, const std::string &histName,
                        int histSize);
   void drawHistogram2D(const cv::Mat &gray, const std::string &histName);
-  void drawColorHistogram3Channel(const cv::Mat &src,
-                                  const std::string &winName =
-                                      "Color Image Histogram");
+  void drawColorHistogram3Channel(
+      const cv::Mat &src, const std::string &winName = "Color Image Histogram");
   void drawDetailedHistogram(const cv::Mat &gray);
   int calculateLaplacianSum(const cv::Mat &src);
 

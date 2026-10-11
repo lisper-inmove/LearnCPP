@@ -40,6 +40,7 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/videoio.hpp>
 #include <string>
+#include <sys/wait.h>
 
 namespace cvtest::tester {
 /**
@@ -245,6 +246,49 @@ TEST_F(Tester, OpenCV_Hist_Comppare) {
     std::cout << " Method [" << methods[i].c_str() << "]: " << src1_src2
               << "\n";
   }
+}
+
+/**
+ * 直方图反向投影
+ * 常用于图像定位与分割
+ * 选取一块目标区域做为模板。然后在全图中查找哪些像素的颜色与模板相似
+ * 通常基于HSV色彩空间的H,S得到2D直方图来实现
+ *
+ * void cv::calcBackProject(
+ *  const Mat *images,
+ *  int nimages,
+ *  const int *channels,
+ *  InputArray hist,
+ *  OutputArray output, // 反向投影之后的输出
+ *  const float **ranges,
+ *  double scale = 1,
+ *  bool uniform = true
+ * )
+ *
+ * */
+TEST_F(Tester, OpenCV_Back_Pprojection) {
+  cv::Mat src = cv::imread(grape_);
+  cv::Mat tpl = cv::imread(grapeTplp_);
+  cv::Mat hsvSrc, hsvTpl;
+  cv::cvtColor(src, hsvSrc, cv::COLOR_BGR2HSV);
+  cv::cvtColor(tpl, hsvTpl, cv::COLOR_BGR2HSV);
+  int h_bins = 32;
+  int s_bins = 32;
+  int histSize[] = {h_bins, s_bins};
+  float h_ranges[] = {0, 180};
+  float s_ranges[] = {0, 256};
+  const float *ranges[] = {h_ranges, s_ranges};
+  int channels[] = {0, 1};
+  cv::Mat roiHist;
+  cv::calcHist(&hsvTpl, 1, channels, cv::Mat(), roiHist, 2, histSize, ranges,
+               true, false);
+  cv::normalize(roiHist, roiHist, 0, 255, cv::NORM_MINMAX, -1, cv::Mat());
+  cv::Mat backgroj;
+  cv::calcBackProject(&hsvSrc, 1, channels, roiHist, backgroj, ranges, 1.0);
+  cv::imshow("Backproj", backgroj);
+  cv::imshow("Source", src);
+  cv::waitKey(3000);
+  cv::destroyAllWindows();
 }
 
 } // namespace cvtest::tester
