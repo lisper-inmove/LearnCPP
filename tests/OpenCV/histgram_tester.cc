@@ -291,4 +291,74 @@ TEST_F(Tester, OpenCV_Back_Pprojection) {
   cv::destroyAllWindows();
 }
 
+/**
+ * 直方图匹配
+ * 把源图像的直方图变换成与参考图像直方图相近的形状
+ * 常用于图像拼接，色彩一致性处理，医学图像增强等
+ *
+ * 1. 计算源图，参考图直方图
+ * 2. 分别求两者的累积分布函数(CDF)
+ * 3. 对源图的每个灰度级i，在参考CDF中找到最接近的灰度级，建立映射关系 map[i] = j
+ * 4. 用该映射对源图每个像素做替换
+ * */
+static std::vector<double> computeCDF(const cv::Mat &hist) {
+  std::vector<double> cdf(hist.total());
+  double sum = 0.0;
+  for (int i = 0; i < (int)hist.total(); ++i) {
+    sum += hist.at<float>(i);
+    cdf[i] = sum;
+  }
+  if (sum > 0) {
+    for (auto &v : cdf)
+      v /= sum;
+  }
+  return cdf;
+}
+
+TEST_F(Tester, OpenCV_Hist_Match) {
+  cv::Mat image = cv::imread(test0_, cv::IMREAD_GRAYSCALE);
+  cv::Mat tpl = cv::imread(tpl_, cv::IMREAD_GRAYSCALE);
+
+  int histSize = 256;
+  float range[] = {0, 256};
+  const float *histRange = {range};
+
+  cv::Mat histImage, histTpl;
+  cv::calcHist(&image, 1, 0, cv::Mat(), histImage, 1, &histSize, &histRange,
+               true, false);
+  cv::calcHist(&tpl, 1, 0, cv::Mat(), histTpl, 1, &histSize, &histRange, true,
+               false);
+
+  std::vector<double> cdfImage = computeCDF(histImage);
+  std::vector<double> cdfTpl = computeCDF(histTpl);
+
+  std::vector<uchar> lookup(256);
+  for (int i = 0; i < 256; i++) {
+    double minDiff = 1e10;
+    int bestJ = 0;
+    for (int j = 0; j < 256; j++) {
+      double diff = std::abs(cdfImage[i] - cdfTpl[j]);
+      if (diff < minDiff) {
+        minDiff = diff;
+        bestJ = j;
+      }
+    }
+    lookup[i] = static_cast<uchar>(bestJ);
+  }
+
+  cv::Mat dst = image.clone();
+  for (int y = 0; y < dst.rows; y++) {
+    for (int x = 0; x < dst.cols; x++) {
+      dst.at<uchar>(y, x) = lookup[image.at<uchar>(y, x)];
+    }
+  }
+
+  cv::imshow("Image", image);
+  cv::imshow("Tpl", tpl);
+  cv::imshow("Matched", dst);
+
+  cv::waitKey(3000);
+  cv::destroyAllWindows();
+}
+
 } // namespace cvtest::tester

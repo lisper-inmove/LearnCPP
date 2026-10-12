@@ -19,6 +19,7 @@ protected:
       (std::filesystem::path(assets_) / "test0.mp4").string();
   std::string test0Mp4New_ =
       (std::filesystem::path(assets_) / "test0New.mp4").string();
+  std::string tpl_ = (std::filesystem::path(assets_) / "tpl.png").string();
   std::string grape_ = (std::filesystem::path(assets_) / "grape.png").string();
   std::string grapeTplp_ =
       (std::filesystem::path(assets_) / "grape_tpl.png").string();

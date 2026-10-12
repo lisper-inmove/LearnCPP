@@ -255,6 +255,9 @@ $(eval $(call TEST_TEMPLATE,OpenCV_Hist_Comppare))
 TESTS += OpenCV_Back_Pprojection
 $(eval $(call TEST_TEMPLATE,OpenCV_Back_Pprojection))
 
+TESTS += OpenCV_Hist_Match
+$(eval $(call TEST_TEMPLATE,OpenCV_Hist_Match))
+
 TESTS += OpenCV_Create_Mat
 $(eval $(call TEST_TEMPLATE,OpenCV_Create_Mat))
 
