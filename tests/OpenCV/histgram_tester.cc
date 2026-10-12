@@ -40,7 +40,6 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/videoio.hpp>
 #include <string>
-#include <sys/wait.h>
 
 namespace cvtest::tester {
 /**
@@ -292,16 +291,13 @@ TEST_F(Tester, OpenCV_Back_Pprojection) {
 }
 
 /**
- * 直方图匹配
- * 把源图像的直方图变换成与参考图像直方图相近的形状
- * 常用于图像拼接，色彩一致性处理，医学图像增强等
- *
- * 1. 计算源图，参考图直方图
- * 2. 分别求两者的累积分布函数(CDF)
- * 3. 对源图的每个灰度级i，在参考CDF中找到最接近的灰度级，建立映射关系 map[i] = j
- * 4. 用该映射对源图每个像素做替换
+ * 累积直方图计算
+ * @hist: 计算好的直方图
  * */
 static std::vector<double> computeCDF(const cv::Mat &hist) {
+  /*
+   * hist.total() 返回矩阵元素总数，rows * cols * channels
+   * */
   std::vector<double> cdf(hist.total());
   double sum = 0.0;
   for (int i = 0; i < (int)hist.total(); ++i) {
@@ -315,6 +311,16 @@ static std::vector<double> computeCDF(const cv::Mat &hist) {
   return cdf;
 }
 
+/**
+ * 直方图匹配
+ * 把源图像的直方图变换成与参考图像直方图相近的形状
+ * 常用于图像拼接，色彩一致性处理，医学图像增强等
+ *
+ * 1. 计算源图，参考图直方图
+ * 2. 分别求两者的累积分布函数(CDF)
+ * 3. 对源图的每个灰度级i，在参考CDF中找到最接近的灰度级，建立映射关系 map[i] = j
+ * 4. 用该映射对源图每个像素做替换
+ * */
 TEST_F(Tester, OpenCV_Hist_Match) {
   cv::Mat image = cv::imread(test0_, cv::IMREAD_GRAYSCALE);
   cv::Mat tpl = cv::imread(tpl_, cv::IMREAD_GRAYSCALE);
@@ -357,7 +363,7 @@ TEST_F(Tester, OpenCV_Hist_Match) {
   cv::imshow("Tpl", tpl);
   cv::imshow("Matched", dst);
 
-  cv::waitKey(3000);
+  cv::waitKey(0);
   cv::destroyAllWindows();
 }
 
