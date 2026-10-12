@@ -1,0 +1,40 @@
+# clang-tidy 配置
+#
+# 由 clangd 的 --clang-tidy 自动加载（nvim 里的 LazyVim 已开启），
+# 无需单独安装 clang-tidy 可执行文件。
+#
+# 启用：
+#   clang-diagnostic-*    编译器诊断
+#   clang-analyzer-*      静态分析（空指针、内存泄漏等）
+#   misc-include-cleaner  冗余/缺失头文件检测（含未使用的 #include）
+#   modernize-*           现代化改写（NULL→nullptr、C 风格转换等）
+#   performance-*         性能问题（不必要的拷贝等）
+#   bugprone-*            易错写法
+#
+# 排除（噪音大或偏好不一）：
+#   modernize-use-trailing-return-type     强制尾置返回类型
+#   modernize-return-braced-init-list      强制 return {x}
+#   modernize-avoid-c-arrays               教程/OpenCV C API 需要 C 数组，如
+#                                          float grayRange[] 传给 cv::calcHist
+#   bugprone-easily-swappable-parameters   (int, int) 这类签名狂报警
+#   bugprone-narrowing-conversions         与显式窄化转换写法冲突
+Checks: >
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  misc-include-cleaner,
+  modernize-*,
+  performance-*,
+  bugprone-*,
+  -modernize-use-trailing-return-type,
+  -modernize-return-braced-init-list,
+  -modernize-avoid-c-arrays,
+  -bugprone-easily-swappable-parameters,
+  -bugprone-narrowing-conversions
+
+CheckOptions:
+  - key: modernize-use-nullptr.NullMacros
+    value: 'NULL'
+  - key: modernize-use-auto.MinTypeNameLength
+    value: '5'
+  - key: performance-for-range-const-ref.WarnOnAllAutoCopies
+    value: false

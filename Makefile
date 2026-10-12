@@ -234,6 +234,15 @@ $(eval $(call TEST_TEMPLATE,MS_Move_Tester))
 TESTS += MS_Initialize_Members_With_Move_Semantics_Tester
 $(eval $(call TEST_TEMPLATE,MS_Initialize_Members_With_Move_Semantics_Tester))
 
+TESTS += OpenCV_Mean_Blur
+$(eval $(call TEST_TEMPLATE,OpenCV_Mean_Blur))
+
+TESTS += Opencv_Gauss_Blur
+$(eval $(call TEST_TEMPLATE,Opencv_Gauss_Blur))
+
+TESTS += OpenCV_Median_Blur
+$(eval $(call TEST_TEMPLATE,OpenCV_Median_Blur))
+
 TESTS += OpenCV_Pixel_Info_Statistics
 $(eval $(call TEST_TEMPLATE,OpenCV_Pixel_Info_Statistics))
 
