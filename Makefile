@@ -243,6 +243,9 @@ $(eval $(call TEST_TEMPLATE,Opencv_Gauss_Blur))
 TESTS += OpenCV_Median_Blur
 $(eval $(call TEST_TEMPLATE,OpenCV_Median_Blur))
 
+TESTS += OpenCV_Filter2D_Blur
+$(eval $(call TEST_TEMPLATE,OpenCV_Filter2D_Blur))
+
 TESTS += OpenCV_Pixel_Info_Statistics
 $(eval $(call TEST_TEMPLATE,OpenCV_Pixel_Info_Statistics))
 

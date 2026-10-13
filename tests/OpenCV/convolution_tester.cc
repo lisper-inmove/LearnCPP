@@ -3,6 +3,7 @@
  * */
 
 #include "tester.h"
+#include <opencv2/core/hal/interface.h>
 #include <opencv2/core/mat.hpp>
 #include <opencv2/core/types.hpp>
 #include <opencv2/highgui.hpp>
@@ -78,6 +79,38 @@ TEST_F(Tester, OpenCV_Median_Blur) {
   cv::medianBlur(src, dst, 7);
   cv::imshow("Image", src);
   cv::imshow("Blur Image", dst);
+  cv::waitKey(0);
+  cv::destroyAllWindows();
+}
+
+/**
+ * 自定义滤波
+ * void cv::filter2D(
+ *  InputArray src,
+ *  OutputArray dst,
+ *  int ddepth,
+ *  InputArray kernel,
+ *  Point anchor = Point(-1, -1),
+ *  double delta = 0,
+ *  int borderType = BORDER_DEFAULT
+ * )
+ *
+ * 常用卷积核
+ * Mat::ones(Size(25, 1), CV_32FC1) / (25 * 1);: 水平模糊
+ * Mat::ones(Size(1, 25), CV_32FC1) / (1 * 25);: 垂直模糊
+ * Mat::eye(Size(25, 25), CV_32FC1) / (25);: 对角线模糊
+ *
+ * filter2D做的是邻域加权求和。如果卷积核总和为1，那么输出像素值就是邻域像素的加权平均值
+ * 图像整体亮度基本不变
+ * */
+TEST_F(Tester, OpenCV_Filter2D_Blur) {
+  cv::Mat image = cv::imread(test0_);
+  cv::Mat k1 = cv::Mat::ones(cv::Size(25, 1), CV_32FC1);
+  k1 = k1 / (25 * 1); // 归一化卷积核
+  cv::Mat result;
+  cv::filter2D(image, result, -1, k1);
+  cv::imshow("Source", image);
+  cv::imshow("Filtered", result);
   cv::waitKey(0);
   cv::destroyAllWindows();
 }
