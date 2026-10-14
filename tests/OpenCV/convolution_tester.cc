@@ -115,4 +115,64 @@ TEST_F(Tester, OpenCV_Filter2D_Blur) {
   cv::destroyAllWindows();
 }
 
+/**
+ * prewitt算子
+ *  OpenCV里未直接实现prewitt算子，使用 filter2D来实现
+ *  Mx = -1 0 1    My = -1 -1 -1
+ *       -1 0 1          0  0  0
+ *       -1 0 1          1  1  1
+ *
+ * sobel 算子
+ *  Mx = -1 0 1    My = -1 -2 -1
+ *       -2 0 2          0  0  0
+ *       -1 0 1          1  2  1
+ *  void cv::Sobel(
+ *    InputArray src,
+ *    OutputArray dst,
+ *    int ddepth,
+ *    int dx,           // 1: 计算x方向的梯度
+ *    int dy,           // 1: 计算y方向的梯度
+ *    int ksize = 3,    // 奇数
+ *    double scale = 1,
+ *    double delta = 0,
+ *    int borderType = BORDER_DEFAULT
+ *  )
+ * scharr 算子
+ *  Mx = -3  0 3    My = -3 -10 -3
+ *       -10 0 10         0   0  0
+ *       -3  0 3          3  10  3
+ *  void cv::Scharr(
+ *    InputArray src,
+ *    OutputArray dst,
+ *    int ddepth,
+ *    int dx,           // 1: 计算x方向的梯度
+ *    int dy,           // 1: 计算y方向的梯度
+ *    double scale = 1,
+ *    double delta = 0,
+ *    int borderType = BORDER_DEFAULT
+ *  )
+ *
+ *  Soble: 常用一阶微分算子，支持1x3, 3x3, 5x7等
+ *  Scharr: Sobel在3x3时的改进版本，精度更高，对边缘响应更强，核大小固定为3x3
+ *
+ *  核越小，越锐利、越敏感、定位越准；
+ *  核越大，越平滑、越抗噪、但细节和定位变差。
+ *  Scharr 是 3×3 下比 Sobel 更优的选择。
+ *
+ * */
+TEST_F(Tester, OpenCV_Gradient_Extract) {
+  cv::Mat image = cv::imread(test0_, cv::IMREAD_GRAYSCALE);
+  cv::Mat dstXY, dstX, dstY;
+  cv::Sobel(image, dstXY, -1, 1, 1);
+  cv::Sobel(image, dstX, -1, 1, 0);
+  cv::Sobel(image, dstY, -1, 0, 1);
+
+  cv::imshow("Source", image);
+  cv::imshow("DstXY", dstXY);
+  cv::imshow("DstX", dstX);
+  cv::imshow("DstY", dstY);
+  cv::waitKey(0);
+  cv::destroyAllWindows();
+}
+
 } // namespace cvtest::tester

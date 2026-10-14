@@ -246,6 +246,9 @@ $(eval $(call TEST_TEMPLATE,OpenCV_Median_Blur))
 TESTS += OpenCV_Filter2D_Blur
 $(eval $(call TEST_TEMPLATE,OpenCV_Filter2D_Blur))
 
+TESTS += OpenCV_Gradient_Extract
+$(eval $(call TEST_TEMPLATE,OpenCV_Gradient_Extract))
+
 TESTS += OpenCV_Pixel_Info_Statistics
 $(eval $(call TEST_TEMPLATE,OpenCV_Pixel_Info_Statistics))
 
