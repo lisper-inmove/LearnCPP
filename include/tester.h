@@ -23,6 +23,8 @@ protected:
   std::string grape_ = (std::filesystem::path(assets_) / "grape.png").string();
   std::string grapeTplp_ =
       (std::filesystem::path(assets_) / "grape_tpl.png").string();
+  std::string checker_ =
+      (std::filesystem::path(assets_) / "checker.png").string();
 
   int sharpenValue(cv::Mat &image);
   void drawHistogram2D(const cv::Mat &hist, const std::string &histName,

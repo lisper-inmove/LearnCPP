@@ -54,7 +54,7 @@ TEST_F(Tester, OpenCV_Mean_Blur) {
  * sigmaX = 0.3 * ((Size - 1) * 0.5 - 1) + 0.8
  *
  * */
-TEST_F(Tester, Opencv_Gauss_Blur) {
+TEST_F(Tester, OpenCV_Gauss_Blur) {
   cv::Mat src = cv::imread(test0_);
   cv::Mat dst;
   cv::GaussianBlur(src, dst, cv::Size(7, 7), 0);
@@ -171,6 +171,20 @@ TEST_F(Tester, OpenCV_Gradient_Extract) {
   cv::imshow("DstXY", dstXY);
   cv::imshow("DstX", dstX);
   cv::imshow("DstY", dstY);
+  cv::waitKey(0);
+  cv::destroyAllWindows();
+}
+
+/**
+ * 边缘发现
+ * */
+TEST_F(Tester, OpenCV_Edge_Detect) {
+  cv::Mat image = cv::imread(checker_, cv::IMREAD_GRAYSCALE);
+  cv::Mat dst;
+  cv::Canny(image, dst, 150, 300);
+
+  cv::imshow("Source", image);
+  cv::imshow("Canny", dst);
   cv::waitKey(0);
   cv::destroyAllWindows();
 }
