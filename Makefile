@@ -234,6 +234,24 @@ $(eval $(call TEST_TEMPLATE,MS_Move_Tester))
 TESTS += MS_Initialize_Members_With_Move_Semantics_Tester
 $(eval $(call TEST_TEMPLATE,MS_Initialize_Members_With_Move_Semantics_Tester))
 
+TESTS += OpenCV_Mean_Blur
+$(eval $(call TEST_TEMPLATE,OpenCV_Mean_Blur))
+
+TESTS += OpenCV_Gauss_Blur
+$(eval $(call TEST_TEMPLATE,OpenCV_Gauss_Blur))
+
+TESTS += OpenCV_Median_Blur
+$(eval $(call TEST_TEMPLATE,OpenCV_Median_Blur))
+
+TESTS += OpenCV_Filter2D_Blur
+$(eval $(call TEST_TEMPLATE,OpenCV_Filter2D_Blur))
+
+TESTS += OpenCV_Gradient_Extract
+$(eval $(call TEST_TEMPLATE,OpenCV_Gradient_Extract))
+
+TESTS += OpenCV_Edge_Detect
+$(eval $(call TEST_TEMPLATE,OpenCV_Edge_Detect))
+
 TESTS += OpenCV_Pixel_Info_Statistics
 $(eval $(call TEST_TEMPLATE,OpenCV_Pixel_Info_Statistics))
 
@@ -248,6 +266,15 @@ $(eval $(call TEST_TEMPLATE,OpenCV_Adaptive_Equalize_Hist))
 
 TESTS += OpenCV_Color_Equalize_Hist
 $(eval $(call TEST_TEMPLATE,OpenCV_Color_Equalize_Hist))
+
+TESTS += OpenCV_Hist_Comppare
+$(eval $(call TEST_TEMPLATE,OpenCV_Hist_Comppare))
+
+TESTS += OpenCV_Back_Pprojection
+$(eval $(call TEST_TEMPLATE,OpenCV_Back_Pprojection))
+
+TESTS += OpenCV_Hist_Match
+$(eval $(call TEST_TEMPLATE,OpenCV_Hist_Match))
 
 TESTS += OpenCV_Create_Mat
 $(eval $(call TEST_TEMPLATE,OpenCV_Create_Mat))

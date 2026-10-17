@@ -1,0 +1,7 @@
+# clangd 项目配置
+#
+# UnusedIncludes: Strict —— 启用"未使用的 #include"诊断（灰色的删除提示 + 一键修复）。
+# clangd 默认是 None（关闭），这个选项必须显式开启才会提示。
+# 依据：https://clangd.llvm.org/config#unusedincludes
+Diagnostics:
+  UnusedIncludes: Strict

@@ -9,14 +9,18 @@
 
 namespace cvtest::tester {
 
-void foo1(const std::string &lr) { std::cout << "copy foo1 called " << lr << "\n"; }
+void foo1(const std::string &lr) {
+  std::cout << "copy foo1 called " << lr << "\n";
+}
 void foo1(std::string &&rv) {
   std::cout << "move foo1 called " << rv << "\n";
   // 如果foo1函数，没有修改rv，实参将不会有改变
   // rv[0] = 'A';
   // rv.clear();
 }
-void foo2(const std::string &lr) { std::cout << "copy foo2 called " << lr << "\n"; }
+void foo2(const std::string &lr) {
+  std::cout << "copy foo2 called " << lr << "\n";
+}
 void foo3(std::string &lr) { std::cout << "copy foo3 called " << lr << "\n"; }
 
 TEST_F(Tester, MS_Move_Tester) {
