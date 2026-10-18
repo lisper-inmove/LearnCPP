@@ -234,6 +234,12 @@ $(eval $(call TEST_TEMPLATE,MS_Move_Tester))
 TESTS += MS_Initialize_Members_With_Move_Semantics_Tester
 $(eval $(call TEST_TEMPLATE,MS_Initialize_Members_With_Move_Semantics_Tester))
 
+TESTS += MS_Core_Feature
+$(eval $(call TEST_TEMPLATE,MS_Core_Feature))
+
+TESTS += MS_Move_Semantics_in_Ordinary_Classes
+$(eval $(call TEST_TEMPLATE,MS_Move_Semantics_in_Ordinary_Classes))
+
 TESTS += OpenCV_Mean_Blur
 $(eval $(call TEST_TEMPLATE,OpenCV_Mean_Blur))
 

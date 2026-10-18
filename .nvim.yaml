@@ -1,0 +1,12 @@
+# Neovim：这个项目的 C++ 测试/调试配置
+# 读取逻辑见 ~/.config/nvim/lua/project_config.lua
+#
+# target 是测试二进制**相对项目根**的路径。
+# 构建目录（Debug）不写也行：从各构建目录里 CMakeCache.txt 的
+# CMAKE_BUILD_TYPE 自动找，再按下面的文件名拼出构建命令。
+target: build-Debug/bin/LearnCPP_Test
+
+# 也可以只写目标名，让 CMake 配置帮着找二进制：
+#   target: LearnCPP_Test
+#
+# 其他可选字段：build_dir / build_args / auto_build / extensions
