@@ -240,6 +240,9 @@ $(eval $(call TEST_TEMPLATE,MS_Core_Feature))
 TESTS += MS_Move_Semantics_in_Ordinary_Classes
 $(eval $(call TEST_TEMPLATE,MS_Move_Semantics_in_Ordinary_Classes))
 
+TESTS += MS_Using_Move_or_Copy
+$(eval $(call TEST_TEMPLATE,MS_Using_Move_or_Copy))
+
 TESTS += OpenCV_Mean_Blur
 $(eval $(call TEST_TEMPLATE,OpenCV_Mean_Blur))
 
@@ -311,6 +314,9 @@ $(eval $(call TEST_TEMPLATE,OpenCV_Image_Load_And_Save))
 
 TESTS += OpenCV_Video_Load_And_Write
 $(eval $(call TEST_TEMPLATE,OpenCV_Video_Load_And_Write))
+
+TESTS += WEP_01_Substring_Sort
+$(eval $(call TEST_TEMPLATE,WEP_01_Substring_Sort))
 
 TESTS += AtomicTester
 $(eval $(call TEST_TEMPLATE,AtomicTester))
