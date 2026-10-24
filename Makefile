@@ -72,39 +72,6 @@ endef
 
 TESTS :=
 
-TESTS += T_Function_Template
-$(eval $(call TEST_TEMPLATE,T_Function_Template))
-
-TESTS += T_Return_Type_as_Common_Type
-$(eval $(call TEST_TEMPLATE,T_Return_Type_as_Common_Type))
-
-TESTS += T_Default_Template_Argument
-$(eval $(call TEST_TEMPLATE,T_Default_Template_Argument))
-
-TESTS += T_Overload_Template
-$(eval $(call TEST_TEMPLATE,T_Overload_Template))
-
-TESTS += T_Class_Template
-$(eval $(call TEST_TEMPLATE,T_Class_Template))
-
-TESTS += T_Type_Query
-$(eval $(call TEST_TEMPLATE,T_Type_Query))
-
-TESTS += T_Type_Transformation
-$(eval $(call TEST_TEMPLATE,T_Type_Transformation))
-
-TESTS += T_Custom_Is_Pointer_Tester
-$(eval $(call TEST_TEMPLATE,T_Custom_Is_Pointer_Tester))
-
-TESTS += T_Variadic_Templates_Tester
-$(eval $(call TEST_TEMPLATE,T_Variadic_Templates_Tester))
-
-TESTS += T_Concepts_Tester
-$(eval $(call TEST_TEMPLATE,T_Concepts_Tester))
-
-TESTS += T_Concepts_Overloading_Tester
-$(eval $(call TEST_TEMPLATE,T_Concepts_Overloading_Tester))
-
 TESTS += CIA_Concurrency_In_Action_CH2_Tester
 $(eval $(call TEST_TEMPLATE,CIA_Concurrency_In_Action_CH2_Tester))
 
@@ -228,6 +195,9 @@ $(eval $(call TEST_TEMPLATE,DIDP_Cloneable2_Tester))
 TESTS += DIDP_Proxy_Tester
 $(eval $(call TEST_TEMPLATE,DIDP_Proxy_Tester))
 
+TESTS += MCPP_Hello_From_Thread
+$(eval $(call TEST_TEMPLATE,MCPP_Hello_From_Thread))
+
 TESTS += MS_Move_Tester
 $(eval $(call TEST_TEMPLATE,MS_Move_Tester))
 
@@ -242,6 +212,12 @@ $(eval $(call TEST_TEMPLATE,MS_Move_Semantics_in_Ordinary_Classes))
 
 TESTS += MS_Using_Move_or_Copy
 $(eval $(call TEST_TEMPLATE,MS_Using_Move_or_Copy))
+
+TESTS += MS_Is_Noexcept_Worth
+$(eval $(call TEST_TEMPLATE,MS_Is_Noexcept_Worth))
+
+TESTS += MS_Value_Category
+$(eval $(call TEST_TEMPLATE,MS_Value_Category))
 
 TESTS += OpenCV_Mean_Blur
 $(eval $(call TEST_TEMPLATE,OpenCV_Mean_Blur))
@@ -314,6 +290,45 @@ $(eval $(call TEST_TEMPLATE,OpenCV_Image_Load_And_Save))
 
 TESTS += OpenCV_Video_Load_And_Write
 $(eval $(call TEST_TEMPLATE,OpenCV_Video_Load_And_Write))
+
+TESTS += OpenGL_Smoke
+$(eval $(call TEST_TEMPLATE,OpenGL_Smoke))
+
+TESTS += T_Function_Template
+$(eval $(call TEST_TEMPLATE,T_Function_Template))
+
+TESTS += T_Return_Type_as_Common_Type
+$(eval $(call TEST_TEMPLATE,T_Return_Type_as_Common_Type))
+
+TESTS += T_Default_Template_Argument
+$(eval $(call TEST_TEMPLATE,T_Default_Template_Argument))
+
+TESTS += T_Overload_Template
+$(eval $(call TEST_TEMPLATE,T_Overload_Template))
+
+TESTS += T_Add_Template
+$(eval $(call TEST_TEMPLATE,T_Add_Template))
+
+TESTS += T_Count_If_Template
+$(eval $(call TEST_TEMPLATE,T_Count_If_Template))
+
+TESTS += T_Type_Query
+$(eval $(call TEST_TEMPLATE,T_Type_Query))
+
+TESTS += T_Type_Transformation
+$(eval $(call TEST_TEMPLATE,T_Type_Transformation))
+
+TESTS += T_Custom_Is_Pointer_Tester
+$(eval $(call TEST_TEMPLATE,T_Custom_Is_Pointer_Tester))
+
+TESTS += T_Variadic_Templates_Tester
+$(eval $(call TEST_TEMPLATE,T_Variadic_Templates_Tester))
+
+TESTS += T_Concepts_Tester
+$(eval $(call TEST_TEMPLATE,T_Concepts_Tester))
+
+TESTS += T_Concepts_Overloading_Tester
+$(eval $(call TEST_TEMPLATE,T_Concepts_Overloading_Tester))
 
 TESTS += WEP_01_Substring_Sort
 $(eval $(call TEST_TEMPLATE,WEP_01_Substring_Sort))

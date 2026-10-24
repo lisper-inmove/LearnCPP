@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
-project(LearnCPP VERSION 1.0.0 LANGUAGES CXX)
+# C 语言必须启用：GLFW 和 glad 都是 C 源码（见 config/opengl.cmake）
+project(LearnCPP VERSION 1.0.0 LANGUAGES C CXX)
 
 # 设置C++23标准
 set(CMAKE_CXX_STANDARD 23)

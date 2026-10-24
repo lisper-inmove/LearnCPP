@@ -28,6 +28,11 @@ target_link_libraries(${TEST_NAME}
     ${OpenCV_LIBS}
 )
 
+# OpenGL 只在 Linux 配置里注册（config/opengl.cmake）；Windows 保持原样
+if(TARGET learncpp_opengl)
+  target_link_libraries(${TEST_NAME} PRIVATE learncpp_opengl)
+endif()
+
 # TBB 仅在存在时链接（Linux 的 OpenCV 自带 TBB 目标，Windows 的没有）
 if(TARGET TBB::tbb)
   target_link_libraries(${TEST_NAME} PRIVATE TBB::tbb)
