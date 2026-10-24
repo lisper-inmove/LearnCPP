@@ -1,5 +1,4 @@
 #include "tester.h"
-#include <algorithm>
 #include <chrono>
 #include <iostream>
 #include <ratio>
