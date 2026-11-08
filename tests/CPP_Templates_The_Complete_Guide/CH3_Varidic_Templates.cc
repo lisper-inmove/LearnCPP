@@ -174,4 +174,67 @@ template <typename... T> void captures(T... args) {
   auto s = l();
 }
 
+/**
+ * Variadic class template
+ * */
+template <typename T, typename... Ts> struct tuple {
+  tuple(T const &t, Ts const &...ts) : value(t), rest(ts...) {}
+  constexpr int size() const { return 1 + rest.size(); }
+  T value;
+  tuple<Ts...> rest;
+};
+template <typename T> struct tuple<T> {
+  tuple(const T &t) : value(t) {}
+  constexpr int size() const { return 1; }
+  T value;
+};
+
+// template <size_t N, typename... Ts>
+// typename nth_type<N, Ts...>::value_type &get(tuple<Ts...> &t);
+
+// nth_type主模板,N继续N-1
+template <size_t N, typename T, typename... Ts>
+struct nth_type : nth_type<N - 1, Ts...> {
+  static_assert(N < sizeof...(Ts) + 1, "Index out of bounds");
+};
+// 基础模板
+template <typename T, typename... Ts> struct nth_type<0, T, Ts...> {
+  using value_type = T;
+};
+// 返回第N个元素的类型
+template <size_t N> struct getter {
+  template <typename... Ts>
+  static typename nth_type<N, Ts...>::value_type &get(tuple<Ts...> &t) {
+    return getter<N - 1>::get(t.rest);
+  }
+};
+// 返回第0个元素的类型
+template <> struct getter<0> {
+  template <typename T, typename... Ts> static T &get(tuple<T, Ts...> &t) {
+    return t.value;
+  }
+};
+template <size_t N, typename... Ts>
+typename nth_type<N, Ts...>::value_type &get(tuple<Ts...> &t) {
+  return getter<N>::get(t);
+}
+
+TEST_F(Tester, T_Simple_Tuple) {
+  tuple<int> one(42);
+  tuple<int, double> two(42, 42.0);
+  tuple<int, double, char> three(42, 42.0, 'a');
+  std::cout << three.rest.rest.value << "\n";
+  std::cout << get<2>(three) << "\n";
+}
+
+/**
+ * Variadic alias templates
+ * */
+template <int, int> using int_sum = sum_wrapper<int, int>;
+
+/**
+ * Variadic variable templates
+ * */
+template <int... R> constexpr int Sum = (... + R);
+
 } // namespace cvtest::tester
