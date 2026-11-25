@@ -219,6 +219,9 @@ $(eval $(call TEST_TEMPLATE,MS_Is_Noexcept_Worth))
 TESTS += MS_Value_Category
 $(eval $(call TEST_TEMPLATE,MS_Value_Category))
 
+TESTS += MS_Check_Type_and_Value_Category
+$(eval $(call TEST_TEMPLATE,MS_Check_Type_and_Value_Category))
+
 TESTS += OpenCV_Mean_Blur
 $(eval $(call TEST_TEMPLATE,OpenCV_Mean_Blur))
 
@@ -311,6 +314,9 @@ $(eval $(call TEST_TEMPLATE,T_Add_Template))
 
 TESTS += T_Count_If_Template
 $(eval $(call TEST_TEMPLATE,T_Count_If_Template))
+
+TESTS += T_Variadic_Template
+$(eval $(call TEST_TEMPLATE,T_Variadic_Template))
 
 TESTS += T_Type_Query
 $(eval $(call TEST_TEMPLATE,T_Type_Query))
