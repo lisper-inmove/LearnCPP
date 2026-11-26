@@ -32,13 +32,14 @@
 #include <iostream>
 #include <memory>
 #include <thread>
+#include <type_traits>
 namespace cvtest::tester {
 TEST_F(Tester, CWMC_Atomic_Flag) {
   /**
    * std::atomic_flag 是唯一的一定 lock-free 的原子变量
    * */
   std::cout << std::boolalpha;
-  std::atomic_flag flag{false};
+  std::atomic_flag flag = ATOMIC_FLAG_INIT;
   std::cout << "before test_and_set value of flag is " << flag.test() << "\n";
   flag.test_and_set(std::memory_order_seq_cst);
   std::cout << "after test_and_set value of flag is " << flag.test() << "\n";
@@ -143,6 +144,118 @@ TEST_F(Tester, CWMC_Compare_Exchange) {
   std::cout << "After value is " << value << "\n";
   std::cout << "After expected is " << expected << "\n";
   std::cout << "After desired is " << desired << "\n";
+}
+
+/**
+ * 用户自定义原子类型
+ * 1. 不能有虚成员函数，也不能有虚基类
+ * 2. 必须是 bitwise comparable
+ * 3. 必须是 trivial copyable，它的基类，非static成员也必须是 trivial。
+ *     不能自定义 copy assignment operator。只能使用 default
+ */
+class MyAtomicType {
+public:
+  int a;
+  int b;
+  MyAtomicType() = default;
+  MyAtomicType(int a, int b) : a(a), b(b) {}
+  MyAtomicType(const MyAtomicType &) = default;
+  MyAtomicType &operator=(const MyAtomicType &) = default;
+};
+TEST_F(Tester, CWMC_Atomic_Custom_Type) {
+  /**
+   * 如果以下任何一个类型特征（type trait）为 false，程序将是非良构的
+   */
+  assert(std::is_trivially_copyable_v<MyAtomicType>);
+  assert(std::is_copy_constructible_v<MyAtomicType>);
+  assert(std::is_copy_assignable_v<MyAtomicType>);
+  assert(std::is_move_constructible_v<MyAtomicType>);
+  assert(std::is_move_assignable_v<MyAtomicType>);
+
+  std::atomic<MyAtomicType> atomicValue;
+  atomicValue.store(MyAtomicType(1, 2));
+  std::cout << "atomicValue is (" << atomicValue.load().a << ", "
+            << atomicValue.load().b << ")\n";
+}
+
+/**
+ * 一个已有的对象的引用可以被包装成原子引用类型
+ * 这个引用在使用期间，可以拥有原子操作的语义
+ * 1. 或者运行时确保对象地址满足 required_alignment。
+ * 标准规定，如果对象没有对齐到 required_alignment，构造 atomic_ref 是未定义行为。
+ * 通常对基础类型没问题，但对结构体或容器元素要特别检查。
+ * 2. atomic_ref有效期内，底层对象必须存活，atomic_ref不延长对象生命周期
+ * 3. 一旦某个对象在多线程中被通过atomic_ref访问，所有对该对象的访问都必须通过atomic_ref进行
+ * 4. atomic_ref 只保护整体T的原子性，不能保护T的成员变量的原子性
+ */
+TEST_F(Tester, CWMC_Atomic_Ref) {
+  struct Counters {
+    int a;
+    int b;
+  };
+  assert(alignof(Counters) >= alignof(std::atomic<Counters>));
+  Counters c;
+  std::atomic_ref<Counters> ar(c);
+  ar.store(Counters{1, 2});
+  auto v = ar.load();
+  std::cout << "c is (" << v.a << ", " << v.b << "\n";
+}
+
+/**
+ * atomic<shared_ptr<T>>: 共享指针的原子操作
+ *  如何安全地在多个线程间并发地读写 std::shared_ptr 对象
+ *  一个shared_ptr对象包括两个指针，一个指向控制块，一个指向引用计数
+ *  多线程之间共享同一个shared_ptr对象时，可能会出现数据竞争
+ *  
+ * 大部分实现中 atomic<shared_ptr<T>> 内部是使用自旋锁来保证原子性，性能可能不如使用 mutex
+ * 使用 is_lock_free 在运行时检查是否保证无锁
+ */
+class Config {
+  using DataMap = std::map<std::string, std::string>;
+  std::atomic<std::shared_ptr<const DataMap>> data_;
+
+public:
+  Config() : data_(std::make_shared<const DataMap>()) {}
+  std::string get(const std::string &key) const {
+    auto snapshot = data_.load();
+    auto it = snapshot->find(key);
+    return (it != snapshot->end()) ? it->second : "";
+  }
+  void set(const std::string &key, const std::string &value) {
+    auto old = data_.load();
+    std::shared_ptr<const DataMap> desired;
+    do {
+      auto updated = std::make_shared<DataMap>(*old);
+      (*updated)[key] = value;
+      desired = std::move(updated);
+    } while (!data_.compare_exchange_weak(old, desired));
+  }
+};
+
+/**
+ * atomic<T*>
+ * 指针本身是原子的，与它指向的值无关
+ */
+TEST_F(Tester, CWMC_Atomic_Pointer) {
+  static_assert(std::atomic<int *>::is_always_lock_free);
+  int a[] = {1, 2, 3, 4, 5, 6};
+  std::atomic<int *> v(a); // a[0]
+  int *b = v.load();
+  v++; // a[1]
+  v--; // a[0]
+  ++v;
+  --v;
+  v.fetch_add(2); // a[2]
+  v.fetch_sub(2); // a[0]
+  std::cout << "Value of v is " << v.load() << "\n";
+}
+
+TEST_F(Tester, CWMC_Atomic_Integral) {
+  std::atomic<int> v(10);
+
+  v.fetch_add(10);
+  v.fetch_and(1);
+  v.fetch_xor(100);
 }
 
 } // namespace cvtest::tester

@@ -1,6 +1,5 @@
 #include "tester.h"
 #include "gtest/gtest.h"
-#include <bits/types/clockid_t.h>
 #include <chrono>
 #include <cstring>
 #include <ctime>
