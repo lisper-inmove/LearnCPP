@@ -240,6 +240,9 @@ $(eval $(call TEST_TEMPLATE,MS_Core_Feature))
 TESTS += MS_Move_Semantics_in_Ordinary_Classes
 $(eval $(call TEST_TEMPLATE,MS_Move_Semantics_in_Ordinary_Classes))
 
+TESTS += MS_Using_Move_or_Copy
+$(eval $(call TEST_TEMPLATE,MS_Using_Move_or_Copy))
+
 TESTS += OpenCV_Mean_Blur
 $(eval $(call TEST_TEMPLATE,OpenCV_Mean_Blur))
 
@@ -281,6 +284,9 @@ $(eval $(call TEST_TEMPLATE,OpenCV_Back_Pprojection))
 
 TESTS += OpenCV_Hist_Match
 $(eval $(call TEST_TEMPLATE,OpenCV_Hist_Match))
+
+TESTS += OpenCV_Pyramid
+$(eval $(call TEST_TEMPLATE,OpenCV_Pyramid))
 
 TESTS += OpenCV_Create_Mat
 $(eval $(call TEST_TEMPLATE,OpenCV_Create_Mat))

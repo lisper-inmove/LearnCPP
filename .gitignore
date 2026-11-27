@@ -2,3 +2,4 @@ build
 build-Debug
 build-Release
 compile_commands.json
+.clangd

@@ -16,6 +16,14 @@
  *    coll.push_back(str);  // 如果是传递的话，这一句之后，str就不能再用了
  *    coll.push_back(std::move(str));
  * }
+ *
+ * 3.3.1 Special Member Functions
+ * 1. Default Constructor
+ * 2. Copy Constructor
+ * 3. Copy Assignment
+ * 4. Move Constructor
+ * 5. Move Assignment
+ * 6. Destructor
  * */
 #include "tester.h"
 #include <algorithm>

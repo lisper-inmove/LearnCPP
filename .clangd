@@ -5,3 +5,10 @@
 # 依据：https://clangd.llvm.org/config#unusedincludes
 Diagnostics:
   UnusedIncludes: Strict
+
+# clangd 配置：让 clangd 使用 conda 的 GCC 16.2.0 标准库头文件。
+# 系统自带 GCC 9.4.0 的 libstdc++ 没有 C++20 头文件 (<concepts>/<stop_token>/<barrier>/... )，
+# 会导致 C++20 测试文件的补全/跳转报错。这里让 clangd 查询 conda 的编译器来拿到正确的 include 路径。
+CompileFlags:
+  Compiler: /home/JC1136/cpp20/bin/x86_64-conda-linux-gnu-g++
+

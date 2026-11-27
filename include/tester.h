@@ -10,7 +10,7 @@ protected:
 #ifdef _WIN32
   std::string assets_ = "F:/codes/CPP/LearnCPP/assets/";
 #else
-  std::string assets_ = "/home/inmove/code/LearnCPP/assets/";
+  std::string assets_ = "/home/JC1136/code/LearnCPP/assets/";
 #endif
   std::string test0_ = (std::filesystem::path(assets_) / "test0.png").string();
   std::string test0New_ =
