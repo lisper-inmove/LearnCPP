@@ -6,9 +6,11 @@
 Diagnostics:
   UnusedIncludes: Strict
 
-# clangd 配置：让 clangd 使用 conda 的 GCC 16.2.0 标准库头文件。
-# 系统自带 GCC 9.4.0 的 libstdc++ 没有 C++20 头文件 (<concepts>/<stop_token>/<barrier>/... )，
-# 会导致 C++20 测试文件的补全/跳转报错。这里让 clangd 查询 conda 的编译器来拿到正确的 include 路径。
-CompileFlags:
-  Compiler: /home/JC1136/cpp20/bin/x86_64-conda-linux-gnu-g++
+# 不要在 .clangd 里写死 Compiler。
+# 以前这里指向 afss 服务器的 /home/JC1136/cpp20/bin/x86_64-conda-linux-gnu-g++，
+# 换到别的机器上该路径不存在，clangd 查询编译器失败后会退回系统 GCC 9 的 libstdc++，
+# 而它没有 C++20 的 <atomic> 成员（atomic_flag::test/wait/notify_one、atomic_ref 等），
+# 导致补全和诊断全部报 "no member named ..."。
+# 正确做法：让 clangd 直接用 compile_commands.json 里记录的真实编译器，
+# 并由编辑器传 --query-driver 允许查询它（见 ~/.config/nvim/lua/plugins/clangd.lua）。
 
