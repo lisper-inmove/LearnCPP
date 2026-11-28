@@ -41,8 +41,10 @@ TEST_F(Tester, CWMC_Atomic_Flag) {
   std::cout << std::boolalpha;
   std::atomic_flag flag = ATOMIC_FLAG_INIT;
   std::cout << "before test_and_set value of flag is " << flag.test() << "\n";
+  // 将flag设置为true，并返回调用前的值
   flag.test_and_set(std::memory_order_seq_cst);
   std::cout << "after test_and_set value of flag is " << flag.test() << "\n";
+  // 无返回值，将flag设置为false
   flag.clear(std::memory_order_seq_cst);
   std::cout << "after clear value of flag is " << flag.test() << "\n";
   std::cout << "Current value is " << flag.test() << "\n";
